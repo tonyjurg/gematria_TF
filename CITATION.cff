@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this software and separately cite BHSA when using generated data."
+title: "gematria_TF: reproducible gematria features for BHSA"
+type: software
+authors:
+  - family-names: Jurg
+    given-names: Tony
+version: 0.1.0
+date-released: 2026-10-01
+url: https://github.com/tonyjurg/gematria_TF
+license: MIT
+references:
+  - type: data
+    title: "Hebrew Text Database ETCBC4b"
+    doi: 10.17026/dans-z6y-skyh
+    authors:
+      - name: Eep Talstra Centre for Bible and Computer
+

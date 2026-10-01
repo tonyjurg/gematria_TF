@@ -1,0 +1,2974 @@
+{
+  "source": {
+    "repository": "https://github.com/ETCBC/bhsa",
+    "commit": "4db00e2157915495e1a4d3d57e41223df24775da",
+    "version": "2021",
+    "sha256": {
+      "otype.tf": "bb5da974a3b1dd7ff9ddab54dfb533059442642ab830b832a49eea8670aaa920",
+      "oslots.tf": "c4efaeed8047d4e75834cc94856d79eacc7a146aea01c34d8be88497d8fa303b",
+      "otext.tf": "20c1c41bc602804ecafbf56bfc88541b0af92afcc16fb594db6acfc6f3a846e9",
+      "lex_utf8.tf": "21f0dde6d79cdde12558b88ae5e07b5717b1a5f7566d37847c57ff7b53b74627",
+      "g_cons_utf8.tf": "1b5a3e41fdadb63e162404fadf83bbebc1ff1a1e016cdee321701ce863c5c87b",
+      "g_word_utf8.tf": "504330f4b4dbcfac628e45998796bcf0ba58b0c905c30a8ebdec088b10d692e0",
+      "trailer_utf8.tf": "cc9120b92248318cd335a088381e464c0650976ff39027ebe87a99b664567899",
+      "qere_utf8.tf": "970fd6e1099e9a8c08ccaa35af896f963d3ad7c7e153fbf833fb36b84efa321e",
+      "qere_trailer_utf8.tf": "6aed11605413792577afe76f1f05a05d5bb8f22b47375971e53295aa1e8043e0",
+      "languageISO.tf": "2fef1ba1a2ba2cd148369886e0560b4084d0d032568e578f26eb52a366750acd",
+      "g_prs_utf8.tf": "738fef4143308de11d69c231d582e88bd26eaa448a23ae7eef6a0bec42724746",
+      "book.tf": "2f84c9493bb9a553bb40d7955472673b85933fe0af116299036d33e09d75702a",
+      "chapter.tf": "a09f8a2df52e7d2cec99b251852f9f88a6ecc0ea4a37ad5bd4a7fd3f3f3b2fc9",
+      "verse.tf": "ad850b19aae6ecb31c75fa4ff80ad956835e5089d60d37c7d73aa0d5a0893b84",
+      "g_cons.tf": "39161c1ba2dc44f19f070fa320cb00dc2c51bbe566f8da4495749b769d1e06a4",
+      "g_word.tf": "191726a37db8976ebead3aee8cc01f3520d41bf7ba2fd077b4ca08604e953ca4",
+      "g_lex.tf": "3c81d126a2fae0ca67aad0d923c37b3ddfd6b741cf93e96760d196322056b828",
+      "g_lex_utf8.tf": "4026b48c461ed5f73d6fd39a36927ae0435f32ddc7abdcba1d00993e1fe68669",
+      "lex.tf": "2469664dc71bcde35a916d6a85453a5567cff3dcbc3e3323204e1120bc5ed25a",
+      "voc_lex_utf8.tf": "e67e3a0d67205fbb8508faabfc210c59e1475465084ea8bfe88fa160bfb628b3",
+      "qere.tf": "3aa63d0061ffe37d22f07f105c187cc96507f859e1867ff2b3b283de4ee2393f",
+      "qere_trailer.tf": "a0ee4a58cde242bc5375cb6959c5cbc394b6a7a56ec39f187fcff44aa2c37e26",
+      "trailer.tf": "d41a18f54482fc20c615cd207091a40ff8cbd667752b6da25f04fe209f109663"
+    },
+    "hashPolicy": "SHA-256 after CRLF-to-LF normalization; all other bytes preserved"
+  },
+  "wordCount": 426590,
+  "languages": {
+    "hbo": 420484,
+    "arc": 6106
+  },
+  "qereEntries": 1892,
+  "emptyQereEntries": 25,
+  "qereErrors": {
+    "322495": "Unexpected character U+0039 in Hebrew input"
+  },
+  "pointedConsonantMismatches": 0,
+  "categories": {
+    "opening": 12,
+    "prefix_group": 231810,
+    "suffix": 43175,
+    "qere": 1892,
+    "qere_boundary": 133,
+    "aramaic": 6106,
+    "maqaf": 42275,
+    "empty_surface": 6488,
+    "final_letter": 76348,
+    "inflection": 144692,
+    "invalid_qere": 1
+  },
+  "sampleCount": 100,
+  "examples": [
+    {
+      "node": 1,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group",
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "ב",
+      "word_ketiv": "ב",
+      "full_ketiv": "בראשית",
+      "ketiv_group": [
+        1,
+        2
+      ],
+      "word_qere": "ב",
+      "full_qere": "בראשית",
+      "qere_group": [
+        1,
+        2
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 2,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ראשית",
+      "word_ketiv": "ראשית",
+      "full_ketiv": "בראשית",
+      "ketiv_group": [
+        1,
+        2
+      ],
+      "word_qere": "ראשית",
+      "full_qere": "בראשית",
+      "qere_group": [
+        1,
+        2
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 3,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening"
+      ],
+      "language": "hbo",
+      "lexeme": "ברא",
+      "word_ketiv": "ברא",
+      "full_ketiv": "ברא",
+      "ketiv_group": [
+        3,
+        3
+      ],
+      "word_qere": "ברא",
+      "full_qere": "ברא",
+      "qere_group": [
+        3,
+        3
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 4,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "אלהים",
+      "word_ketiv": "אלהים",
+      "full_ketiv": "אלהים",
+      "ketiv_group": [
+        4,
+        4
+      ],
+      "word_qere": "אלהים",
+      "full_qere": "אלהים",
+      "qere_group": [
+        4,
+        4
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 5,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening"
+      ],
+      "language": "hbo",
+      "lexeme": "את",
+      "word_ketiv": "את",
+      "full_ketiv": "את",
+      "ketiv_group": [
+        5,
+        5
+      ],
+      "word_qere": "את",
+      "full_qere": "את",
+      "qere_group": [
+        5,
+        5
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 6,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "ה",
+      "full_ketiv": "השמים",
+      "ketiv_group": [
+        6,
+        7
+      ],
+      "word_qere": "ה",
+      "full_qere": "השמים",
+      "qere_group": [
+        6,
+        7
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 7,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group",
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "שמים",
+      "word_ketiv": "שמים",
+      "full_ketiv": "השמים",
+      "ketiv_group": [
+        6,
+        7
+      ],
+      "word_qere": "שמים",
+      "full_qere": "השמים",
+      "qere_group": [
+        6,
+        7
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 8,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ו",
+      "word_ketiv": "ו",
+      "full_ketiv": "ואת",
+      "ketiv_group": [
+        8,
+        9
+      ],
+      "word_qere": "ו",
+      "full_qere": "ואת",
+      "qere_group": [
+        8,
+        9
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 9,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "את",
+      "word_ketiv": "את",
+      "full_ketiv": "ואת",
+      "ketiv_group": [
+        8,
+        9
+      ],
+      "word_qere": "את",
+      "full_qere": "ואת",
+      "qere_group": [
+        8,
+        9
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 10,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "opening",
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "ה",
+      "full_ketiv": "הארץ",
+      "ketiv_group": [
+        10,
+        11
+      ],
+      "word_qere": "ה",
+      "full_qere": "הארץ",
+      "qere_group": [
+        10,
+        11
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 11,
+      "section": [
+        "Genesis",
+        1,
+        1
+      ],
+      "categories": [
+        "prefix_group",
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "ארץ",
+      "word_ketiv": "ארץ",
+      "full_ketiv": "הארץ",
+      "ketiv_group": [
+        10,
+        11
+      ],
+      "word_qere": "ארץ",
+      "full_qere": "הארץ",
+      "qere_group": [
+        10,
+        11
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 12,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ו",
+      "word_ketiv": "ו",
+      "full_ketiv": "והארץ",
+      "ketiv_group": [
+        12,
+        14
+      ],
+      "word_qere": "ו",
+      "full_qere": "והארץ",
+      "qere_group": [
+        12,
+        14
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 13,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "prefix_group"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "ה",
+      "full_ketiv": "והארץ",
+      "ketiv_group": [
+        12,
+        14
+      ],
+      "word_qere": "ה",
+      "full_qere": "והארץ",
+      "qere_group": [
+        12,
+        14
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 14,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "ארץ",
+      "word_ketiv": "ארץ",
+      "full_ketiv": "והארץ",
+      "ketiv_group": [
+        12,
+        14
+      ],
+      "word_qere": "ארץ",
+      "full_qere": "והארץ",
+      "qere_group": [
+        12,
+        14
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 15,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "היתה",
+      "full_ketiv": "היתה",
+      "ketiv_group": [
+        15,
+        15
+      ],
+      "word_qere": "היתה",
+      "full_qere": "היתה",
+      "qere_group": [
+        15,
+        15
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 20,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "חשך",
+      "word_ketiv": "חשך",
+      "full_ketiv": "וחשך",
+      "ketiv_group": [
+        19,
+        20
+      ],
+      "word_qere": "חשך",
+      "full_qere": "וחשך",
+      "qere_group": [
+        19,
+        20
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 21,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "על",
+      "word_ketiv": "על",
+      "full_ketiv": "על",
+      "ketiv_group": [
+        21,
+        21
+      ],
+      "word_qere": "על",
+      "full_qere": "על",
+      "qere_group": [
+        21,
+        21
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 22,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "פנה",
+      "word_ketiv": "פני",
+      "full_ketiv": "פני",
+      "ketiv_group": [
+        22,
+        22
+      ],
+      "word_qere": "פני",
+      "full_qere": "פני",
+      "qere_group": [
+        22,
+        22
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 23,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "תהום",
+      "word_ketiv": "תהום",
+      "full_ketiv": "תהום",
+      "ketiv_group": [
+        23,
+        23
+      ],
+      "word_qere": "תהום",
+      "full_qere": "תהום",
+      "qere_group": [
+        23,
+        23
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 26,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "אלהים",
+      "word_ketiv": "אלהים",
+      "full_ketiv": "אלהים",
+      "ketiv_group": [
+        26,
+        26
+      ],
+      "word_qere": "אלהים",
+      "full_qere": "אלהים",
+      "qere_group": [
+        26,
+        26
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 27,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "רחף",
+      "word_ketiv": "מרחפת",
+      "full_ketiv": "מרחפת",
+      "ketiv_group": [
+        27,
+        27
+      ],
+      "word_qere": "מרחפת",
+      "full_qere": "מרחפת",
+      "qere_group": [
+        27,
+        27
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 28,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "על",
+      "word_ketiv": "על",
+      "full_ketiv": "על",
+      "ketiv_group": [
+        28,
+        28
+      ],
+      "word_qere": "על",
+      "full_qere": "על",
+      "qere_group": [
+        28,
+        28
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 29,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "פנה",
+      "word_ketiv": "פני",
+      "full_ketiv": "פני",
+      "ketiv_group": [
+        29,
+        29
+      ],
+      "word_qere": "פני",
+      "full_qere": "פני",
+      "qere_group": [
+        29,
+        29
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 31,
+      "section": [
+        "Genesis",
+        1,
+        2
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "מים",
+      "word_ketiv": "מים",
+      "full_ketiv": "המים",
+      "ketiv_group": [
+        30,
+        31
+      ],
+      "word_qere": "מים",
+      "full_qere": "המים",
+      "qere_group": [
+        30,
+        31
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 33,
+      "section": [
+        "Genesis",
+        1,
+        3
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "אמר",
+      "word_ketiv": "יאמר",
+      "full_ketiv": "ויאמר",
+      "ketiv_group": [
+        32,
+        33
+      ],
+      "word_qere": "יאמר",
+      "full_qere": "ויאמר",
+      "qere_group": [
+        32,
+        33
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 34,
+      "section": [
+        "Genesis",
+        1,
+        3
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "אלהים",
+      "word_ketiv": "אלהים",
+      "full_ketiv": "אלהים",
+      "ketiv_group": [
+        34,
+        34
+      ],
+      "word_qere": "אלהים",
+      "full_qere": "אלהים",
+      "qere_group": [
+        34,
+        34
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 35,
+      "section": [
+        "Genesis",
+        1,
+        3
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "יהי",
+      "ketiv_group": [
+        35,
+        35
+      ],
+      "word_qere": "יהי",
+      "full_qere": "יהי",
+      "qere_group": [
+        35,
+        35
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 38,
+      "section": [
+        "Genesis",
+        1,
+        3
+      ],
+      "categories": [
+        "maqaf",
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "ויהי",
+      "ketiv_group": [
+        37,
+        38
+      ],
+      "word_qere": "יהי",
+      "full_qere": "ויהי",
+      "qere_group": [
+        37,
+        38
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 41,
+      "section": [
+        "Genesis",
+        1,
+        4
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "ראה",
+      "word_ketiv": "ירא",
+      "full_ketiv": "וירא",
+      "ketiv_group": [
+        40,
+        41
+      ],
+      "word_qere": "ירא",
+      "full_qere": "וירא",
+      "qere_group": [
+        40,
+        41
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 42,
+      "section": [
+        "Genesis",
+        1,
+        4
+      ],
+      "categories": [
+        "final_letter"
+      ],
+      "language": "hbo",
+      "lexeme": "אלהים",
+      "word_ketiv": "אלהים",
+      "full_ketiv": "אלהים",
+      "ketiv_group": [
+        42,
+        42
+      ],
+      "word_qere": "אלהים",
+      "full_qere": "אלהים",
+      "qere_group": [
+        42,
+        42
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 43,
+      "section": [
+        "Genesis",
+        1,
+        4
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "את",
+      "word_ketiv": "את",
+      "full_ketiv": "את",
+      "ketiv_group": [
+        43,
+        43
+      ],
+      "word_qere": "את",
+      "full_qere": "את",
+      "qere_group": [
+        43,
+        43
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 46,
+      "section": [
+        "Genesis",
+        1,
+        4
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "כי",
+      "word_ketiv": "כי",
+      "full_ketiv": "כי",
+      "ketiv_group": [
+        46,
+        46
+      ],
+      "word_qere": "כי",
+      "full_qere": "כי",
+      "qere_group": [
+        46,
+        46
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 49,
+      "section": [
+        "Genesis",
+        1,
+        4
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "בדל",
+      "word_ketiv": "יבדל",
+      "full_ketiv": "ויבדל",
+      "ketiv_group": [
+        48,
+        49
+      ],
+      "word_qere": "יבדל",
+      "full_qere": "ויבדל",
+      "qere_group": [
+        48,
+        49
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 59,
+      "section": [
+        "Genesis",
+        1,
+        5
+      ],
+      "categories": [
+        "inflection"
+      ],
+      "language": "hbo",
+      "lexeme": "קרא",
+      "word_ketiv": "יקרא",
+      "full_ketiv": "ויקרא",
+      "ketiv_group": [
+        58,
+        59
+      ],
+      "word_qere": "יקרא",
+      "full_qere": "ויקרא",
+      "qere_group": [
+        58,
+        59
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 62,
+      "section": [
+        "Genesis",
+        1,
+        5
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "לאור",
+      "ketiv_group": [
+        61,
+        63
+      ],
+      "word_qere": "",
+      "full_qere": "לאור",
+      "qere_group": [
+        61,
+        63
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 67,
+      "section": [
+        "Genesis",
+        1,
+        5
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "ולחשך",
+      "ketiv_group": [
+        65,
+        68
+      ],
+      "word_qere": "",
+      "full_qere": "ולחשך",
+      "qere_group": [
+        65,
+        68
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 72,
+      "section": [
+        "Genesis",
+        1,
+        5
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "ויהי",
+      "ketiv_group": [
+        71,
+        72
+      ],
+      "word_qere": "יהי",
+      "full_qere": "ויהי",
+      "qere_group": [
+        71,
+        72
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 75,
+      "section": [
+        "Genesis",
+        1,
+        5
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "ויהי",
+      "ketiv_group": [
+        74,
+        75
+      ],
+      "word_qere": "יהי",
+      "full_qere": "ויהי",
+      "qere_group": [
+        74,
+        75
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 98,
+      "section": [
+        "Genesis",
+        1,
+        7
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "את",
+      "word_ketiv": "את",
+      "full_ketiv": "את",
+      "ketiv_group": [
+        98,
+        98
+      ],
+      "word_qere": "את",
+      "full_qere": "את",
+      "qere_group": [
+        98,
+        98
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 110,
+      "section": [
+        "Genesis",
+        1,
+        7
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "לרקיע",
+      "ketiv_group": [
+        109,
+        111
+      ],
+      "word_qere": "",
+      "full_qere": "לרקיע",
+      "qere_group": [
+        109,
+        111
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 120,
+      "section": [
+        "Genesis",
+        1,
+        7
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "לרקיע",
+      "ketiv_group": [
+        119,
+        121
+      ],
+      "word_qere": "",
+      "full_qere": "לרקיע",
+      "qere_group": [
+        119,
+        121
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 123,
+      "section": [
+        "Genesis",
+        1,
+        7
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "ויהי",
+      "ketiv_group": [
+        122,
+        123
+      ],
+      "word_qere": "יהי",
+      "full_qere": "ויהי",
+      "qere_group": [
+        122,
+        123
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 129,
+      "section": [
+        "Genesis",
+        1,
+        8
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "לרקיע",
+      "ketiv_group": [
+        128,
+        130
+      ],
+      "word_qere": "",
+      "full_qere": "לרקיע",
+      "qere_group": [
+        128,
+        130
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 133,
+      "section": [
+        "Genesis",
+        1,
+        8
+      ],
+      "categories": [
+        "maqaf"
+      ],
+      "language": "hbo",
+      "lexeme": "היה",
+      "word_ketiv": "יהי",
+      "full_ketiv": "ויהי",
+      "ketiv_group": [
+        132,
+        133
+      ],
+      "word_qere": "יהי",
+      "full_qere": "ויהי",
+      "qere_group": [
+        132,
+        133
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 164,
+      "section": [
+        "Genesis",
+        1,
+        10
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "ליבשה",
+      "ketiv_group": [
+        163,
+        165
+      ],
+      "word_qere": "",
+      "full_qere": "ליבשה",
+      "qere_group": [
+        163,
+        165
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 194,
+      "section": [
+        "Genesis",
+        1,
+        11
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "מין",
+      "word_ketiv": "מינו",
+      "full_ketiv": "למינו",
+      "ketiv_group": [
+        193,
+        194
+      ],
+      "word_qere": "מינו",
+      "full_qere": "למינו",
+      "qere_group": [
+        193,
+        194
+      ],
+      "raw_suffix": "ֹו",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 196,
+      "section": [
+        "Genesis",
+        1,
+        11
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "זרע",
+      "word_ketiv": "זרעו",
+      "full_ketiv": "זרעו",
+      "ketiv_group": [
+        196,
+        196
+      ],
+      "word_qere": "זרעו",
+      "full_qere": "זרעו",
+      "qere_group": [
+        196,
+        196
+      ],
+      "raw_suffix": "ֹו",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 197,
+      "section": [
+        "Genesis",
+        1,
+        11
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "ב",
+      "word_ketiv": "בו",
+      "full_ketiv": "בו",
+      "ketiv_group": [
+        197,
+        197
+      ],
+      "word_qere": "בו",
+      "full_qere": "בו",
+      "qere_group": [
+        197,
+        197
+      ],
+      "raw_suffix": "ֹו",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 213,
+      "section": [
+        "Genesis",
+        1,
+        12
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "מין",
+      "word_ketiv": "מינהו",
+      "full_ketiv": "למינהו",
+      "ketiv_group": [
+        212,
+        213
+      ],
+      "word_qere": "מינהו",
+      "full_qere": "למינהו",
+      "qere_group": [
+        212,
+        213
+      ],
+      "raw_suffix": "ֵהוּ",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 219,
+      "section": [
+        "Genesis",
+        1,
+        12
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "זרע",
+      "word_ketiv": "זרעו",
+      "full_ketiv": "זרעו",
+      "ketiv_group": [
+        219,
+        219
+      ],
+      "word_qere": "זרעו",
+      "full_qere": "זרעו",
+      "qere_group": [
+        219,
+        219
+      ],
+      "raw_suffix": "ֹו",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 220,
+      "section": [
+        "Genesis",
+        1,
+        12
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "ב",
+      "word_ketiv": "בו",
+      "full_ketiv": "בו",
+      "ketiv_group": [
+        220,
+        220
+      ],
+      "word_qere": "בו",
+      "full_qere": "בו",
+      "qere_group": [
+        220,
+        220
+      ],
+      "raw_suffix": "ֹו",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 222,
+      "section": [
+        "Genesis",
+        1,
+        12
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "מין",
+      "word_ketiv": "מינהו",
+      "full_ketiv": "למינהו",
+      "ketiv_group": [
+        221,
+        222
+      ],
+      "word_qere": "מינהו",
+      "full_qere": "למינהו",
+      "qere_group": [
+        221,
+        222
+      ],
+      "raw_suffix": "ֵהוּ",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 316,
+      "section": [
+        "Genesis",
+        1,
+        17
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "את",
+      "word_ketiv": "אתם",
+      "full_ketiv": "אתם",
+      "ketiv_group": [
+        316,
+        316
+      ],
+      "word_qere": "אתם",
+      "full_qere": "אתם",
+      "qere_group": [
+        316,
+        316
+      ],
+      "raw_suffix": "ָמ",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 331,
+      "section": [
+        "Genesis",
+        1,
+        18
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "ביום",
+      "ketiv_group": [
+        330,
+        332
+      ],
+      "word_qere": "",
+      "full_qere": "ביום",
+      "qere_group": [
+        330,
+        332
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 335,
+      "section": [
+        "Genesis",
+        1,
+        18
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "ובלילה",
+      "ketiv_group": [
+        333,
+        336
+      ],
+      "word_qere": "",
+      "full_qere": "ובלילה",
+      "qere_group": [
+        333,
+        336
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 401,
+      "section": [
+        "Genesis",
+        1,
+        21
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "מין",
+      "word_ketiv": "מינהם",
+      "full_ketiv": "למינהם",
+      "ketiv_group": [
+        400,
+        401
+      ],
+      "word_qere": "מינהם",
+      "full_qere": "למינהם",
+      "qere_group": [
+        400,
+        401
+      ],
+      "raw_suffix": "הֶם",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 408,
+      "section": [
+        "Genesis",
+        1,
+        21
+      ],
+      "categories": [
+        "suffix"
+      ],
+      "language": "hbo",
+      "lexeme": "מין",
+      "word_ketiv": "מינהו",
+      "full_ketiv": "למינהו",
+      "ketiv_group": [
+        407,
+        408
+      ],
+      "word_qere": "מינהו",
+      "full_qere": "למינהו",
+      "qere_group": [
+        407,
+        408
+      ],
+      "raw_suffix": "ֵהוּ",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 429,
+      "section": [
+        "Genesis",
+        1,
+        22
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "בימים",
+      "ketiv_group": [
+        428,
+        430
+      ],
+      "word_qere": "",
+      "full_qere": "בימים",
+      "qere_group": [
+        428,
+        430
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 436,
+      "section": [
+        "Genesis",
+        1,
+        22
+      ],
+      "categories": [
+        "empty_surface"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "",
+      "full_ketiv": "בארץ",
+      "ketiv_group": [
+        435,
+        437
+      ],
+      "word_qere": "",
+      "full_qere": "בארץ",
+      "qere_group": [
+        435,
+        437
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 3897,
+      "section": [
+        "Genesis",
+        8,
+        17
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "יצא",
+      "word_ketiv": "הוצא",
+      "full_ketiv": "הוצא",
+      "ketiv_group": [
+        3897,
+        3897
+      ],
+      "word_qere": "היצא",
+      "full_qere": "היצא",
+      "qere_group": [
+        3897,
+        3897
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "הַיְצֵ֣א",
+      "qere_trailer": " "
+    },
+    {
+      "node": 4266,
+      "section": [
+        "Genesis",
+        9,
+        13
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "נתן",
+      "word_ketiv": "נתתי",
+      "full_ketiv": "נתתי",
+      "ketiv_group": [
+        4266,
+        4266
+      ],
+      "word_qere": "נתתי",
+      "full_qere": "נתתי",
+      "qere_group": [
+        4266,
+        4266
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 4420,
+      "section": [
+        "Genesis",
+        9,
+        21
+      ],
+      "categories": [
+        "qere",
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "אהל",
+      "word_ketiv": "אהלה",
+      "full_ketiv": "אהלה",
+      "ketiv_group": [
+        4420,
+        4420
+      ],
+      "word_qere": "אהלו",
+      "full_qere": "אהלו",
+      "qere_group": [
+        4420,
+        4420
+      ],
+      "raw_suffix": "ה",
+      "trailer": "׃ ",
+      "qere": "אָהֳלֹֽו",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 5645,
+      "section": [
+        "Genesis",
+        12,
+        8
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "אהל",
+      "word_ketiv": "אהלה",
+      "full_ketiv": "אהלה",
+      "ketiv_group": [
+        5645,
+        5645
+      ],
+      "word_qere": "אהלו",
+      "full_qere": "אהלו",
+      "qere_group": [
+        5645,
+        5645
+      ],
+      "raw_suffix": "ה",
+      "trailer": " ",
+      "qere": "אָהֳלֹ֑ו",
+      "qere_trailer": " "
+    },
+    {
+      "node": 5912,
+      "section": [
+        "Genesis",
+        13,
+        3
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "אהל",
+      "word_ketiv": "אהלה",
+      "full_ketiv": "אהלה",
+      "ketiv_group": [
+        5912,
+        5912
+      ],
+      "word_qere": "אהלו",
+      "full_qere": "אהלו",
+      "qere_group": [
+        5912,
+        5912
+      ],
+      "raw_suffix": "ה",
+      "trailer": " ",
+      "qere": "אָֽהֳלֹו֙",
+      "qere_trailer": " "
+    },
+    {
+      "node": 6246,
+      "section": [
+        "Genesis",
+        14,
+        2
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "צבאים",
+      "word_ketiv": "צביים",
+      "full_ketiv": "צביים",
+      "ketiv_group": [
+        6246,
+        6246
+      ],
+      "word_qere": "צבוים",
+      "full_qere": "צבוים",
+      "qere_group": [
+        6246,
+        6246
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "צְבֹויִ֔ם",
+      "qere_trailer": " "
+    },
+    {
+      "node": 6354,
+      "section": [
+        "Genesis",
+        14,
+        8
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "צבאים",
+      "word_ketiv": "צביים",
+      "full_ketiv": "צביים",
+      "ketiv_group": [
+        6354,
+        6354
+      ],
+      "word_qere": "צבוים",
+      "full_qere": "צבוים",
+      "qere_group": [
+        6354,
+        6354
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "צְבֹויִ֔ם",
+      "qere_trailer": " "
+    },
+    {
+      "node": 8531,
+      "section": [
+        "Genesis",
+        19,
+        5
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "אשר",
+      "word_ketiv": "אשר",
+      "full_ketiv": "אשר",
+      "ketiv_group": [
+        8531,
+        8531
+      ],
+      "word_qere": "אשר",
+      "full_qere": "אשר",
+      "qere_group": [
+        8531,
+        8531
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 11762,
+      "section": [
+        "Genesis",
+        24,
+        33
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "ו",
+      "word_ketiv": "ו",
+      "full_ketiv": "ויישם",
+      "ketiv_group": [
+        11762,
+        11763
+      ],
+      "word_qere": "ו",
+      "full_qere": "ויושם",
+      "qere_group": [
+        11762,
+        11763
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": "וַ",
+      "qere_trailer": ""
+    },
+    {
+      "node": 11763,
+      "section": [
+        "Genesis",
+        24,
+        33
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "שים",
+      "word_ketiv": "יישם",
+      "full_ketiv": "ויישם",
+      "ketiv_group": [
+        11762,
+        11763
+      ],
+      "word_qere": "יושם",
+      "full_qere": "ויושם",
+      "qere_group": [
+        11762,
+        11763
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "יּוּשַׂ֤ם",
+      "qere_trailer": " "
+    },
+    {
+      "node": 12784,
+      "section": [
+        "Genesis",
+        25,
+        23
+      ],
+      "categories": [
+        "qere"
+      ],
+      "language": "hbo",
+      "lexeme": "גוי",
+      "word_ketiv": "גיים",
+      "full_ketiv": "גיים",
+      "ketiv_group": [
+        12784,
+        12784
+      ],
+      "word_qere": "גוים",
+      "full_qere": "גוים",
+      "qere_group": [
+        12784,
+        12784
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "גֹויִם֙",
+      "qere_trailer": " "
+    },
+    {
+      "node": 12796,
+      "section": [
+        "Genesis",
+        25,
+        23
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "לאם",
+      "word_ketiv": "לאם",
+      "full_ketiv": "מלאם",
+      "ketiv_group": [
+        12795,
+        12796
+      ],
+      "word_qere": "לאם",
+      "full_qere": "מלאם",
+      "qere_group": [
+        12795,
+        12796
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 13685,
+      "section": [
+        "Genesis",
+        27,
+        3
+      ],
+      "categories": [
+        "qere",
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "ציד",
+      "word_ketiv": "צידה",
+      "full_ketiv": "צידה",
+      "ketiv_group": [
+        13685,
+        13685
+      ],
+      "word_qere": "ציד",
+      "full_qere": "ציד",
+      "qere_group": [
+        13685,
+        13685
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": "צָֽיִד",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 15747,
+      "section": [
+        "Genesis",
+        30,
+        11
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "בוא",
+      "word_ketiv": "ב",
+      "full_ketiv": "בגד",
+      "ketiv_group": [
+        15747,
+        15748
+      ],
+      "word_qere": "בא",
+      "full_qere": "בא",
+      "qere_group": [
+        15747,
+        15747
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": "בָּ֣א",
+      "qere_trailer": " "
+    },
+    {
+      "node": 17061,
+      "section": [
+        "Genesis",
+        31,
+        36
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "ו",
+      "word_ketiv": "ו",
+      "full_ketiv": "וירב",
+      "ketiv_group": [
+        17061,
+        17062
+      ],
+      "word_qere": "ו",
+      "full_qere": "וירב",
+      "qere_group": [
+        17061,
+        17062
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 17278,
+      "section": [
+        "Genesis",
+        31,
+        47
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "יגר",
+      "word_ketiv": "יגר",
+      "full_ketiv": "יגר",
+      "ketiv_group": [
+        17278,
+        17278
+      ],
+      "word_qere": "יגר",
+      "full_qere": "יגר",
+      "qere_group": [
+        17278,
+        17278
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 17279,
+      "section": [
+        "Genesis",
+        31,
+        47
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "שהדו",
+      "word_ketiv": "שהדותא",
+      "full_ketiv": "שהדותא",
+      "ketiv_group": [
+        17279,
+        17279
+      ],
+      "word_qere": "שהדותא",
+      "full_qere": "שהדותא",
+      "qere_group": [
+        17279,
+        17279
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 21326,
+      "section": [
+        "Genesis",
+        38,
+        25
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "ה",
+      "word_ketiv": "ה",
+      "full_ketiv": "והפתילים",
+      "ketiv_group": [
+        21325,
+        21327
+      ],
+      "word_qere": "ה",
+      "full_qere": "והפתילים",
+      "qere_group": [
+        21325,
+        21327
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 24704,
+      "section": [
+        "Genesis",
+        43,
+        28
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "חוה",
+      "word_ketiv": "ישתחו",
+      "full_ketiv": "וישתחו",
+      "ketiv_group": [
+        24703,
+        24704
+      ],
+      "word_qere": "ישתחוו",
+      "full_qere": "וישתחוו",
+      "qere_group": [
+        24703,
+        24704
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": "יִּֽשְׁתַּחֲוּֽוּ",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 25591,
+      "section": [
+        "Genesis",
+        45,
+        7
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "גדול",
+      "word_ketiv": "גדלה",
+      "full_ketiv": "גדלה",
+      "ketiv_group": [
+        25591,
+        25591
+      ],
+      "word_qere": "גדלה",
+      "full_qere": "גדלה",
+      "qere_group": [
+        25591,
+        25591
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 27941,
+      "section": [
+        "Genesis",
+        49,
+        11
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "סות",
+      "word_ketiv": "סותה",
+      "full_ketiv": "סותה",
+      "ketiv_group": [
+        27941,
+        27941
+      ],
+      "word_qere": "סותו",
+      "full_qere": "סותו",
+      "qere_group": [
+        27941,
+        27941
+      ],
+      "raw_suffix": "ה",
+      "trailer": "׃ ",
+      "qere": "סוּתֹֽו",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 29856,
+      "section": [
+        "Exodus",
+        3,
+        10
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "עם",
+      "word_ketiv": "עמי",
+      "full_ketiv": "עמי",
+      "ketiv_group": [
+        29856,
+        29856
+      ],
+      "word_qere": "עמי",
+      "full_qere": "עמי",
+      "qere_group": [
+        29856,
+        29856
+      ],
+      "raw_suffix": "ִי",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 30194,
+      "section": [
+        "Exodus",
+        4,
+        2
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "מה",
+      "word_ketiv": "מ",
+      "full_ketiv": "מזה",
+      "ketiv_group": [
+        30194,
+        30195
+      ],
+      "word_qere": "מה",
+      "full_qere": "מה",
+      "qere_group": [
+        30194,
+        30194
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": "מַה",
+      "qere_trailer": "־"
+    },
+    {
+      "node": 34121,
+      "section": [
+        "Exodus",
+        10,
+        13
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "רוח",
+      "word_ketiv": "רוח",
+      "full_ketiv": "ורוח",
+      "ketiv_group": [
+        34120,
+        34121
+      ],
+      "word_qere": "רוח",
+      "full_qere": "ורוח",
+      "qere_group": [
+        34120,
+        34121
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 38386,
+      "section": [
+        "Exodus",
+        17,
+        12
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "משה",
+      "word_ketiv": "משה",
+      "full_ketiv": "משה",
+      "ketiv_group": [
+        38386,
+        38386
+      ],
+      "word_qere": "משה",
+      "full_qere": "משה",
+      "qere_group": [
+        38386,
+        38386
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 42651,
+      "section": [
+        "Exodus",
+        26,
+        2
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "ל",
+      "word_ketiv": "ל",
+      "full_ketiv": "לכל",
+      "ketiv_group": [
+        42651,
+        42652
+      ],
+      "word_qere": "ל",
+      "full_qere": "לכל",
+      "qere_group": [
+        42651,
+        42652
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 46916,
+      "section": [
+        "Exodus",
+        32,
+        19
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "ראה",
+      "word_ketiv": "ירא",
+      "full_ketiv": "וירא",
+      "ketiv_group": [
+        46915,
+        46916
+      ],
+      "word_qere": "ירא",
+      "full_qere": "וירא",
+      "qere_group": [
+        46915,
+        46916
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 50065,
+      "section": [
+        "Exodus",
+        37,
+        8
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "קצה",
+      "word_ketiv": "קצוותו",
+      "full_ketiv": "קצוותו",
+      "ketiv_group": [
+        50065,
+        50065
+      ],
+      "word_qere": "קצותיו",
+      "full_qere": "קצותיו",
+      "qere_group": [
+        50065,
+        50065
+      ],
+      "raw_suffix": "ו",
+      "trailer": "׃ ",
+      "qere": "קְצֹותָֽיו",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 51181,
+      "section": [
+        "Exodus",
+        39,
+        6
+      ],
+      "categories": [
+        "corpus_spread"
+      ],
+      "language": "hbo",
+      "lexeme": "משבצות",
+      "word_ketiv": "משבצת",
+      "full_ketiv": "משבצת",
+      "ketiv_group": [
+        51181,
+        51181
+      ],
+      "word_qere": "משבצת",
+      "full_qere": "משבצת",
+      "qere_group": [
+        51181,
+        51181
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 96497,
+      "section": [
+        "Deuteronomy",
+        5,
+        10
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "מצוה",
+      "word_ketiv": "מצותו",
+      "full_ketiv": "מצותו",
+      "ketiv_group": [
+        96497,
+        96497
+      ],
+      "word_qere": "מצותי",
+      "full_qere": "מצותי",
+      "qere_group": [
+        96497,
+        96497
+      ],
+      "raw_suffix": "ו",
+      "trailer": "׃ ",
+      "qere": "מִצְוֹתָֽי",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 105660,
+      "section": [
+        "Deuteronomy",
+        22,
+        20
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "נערה",
+      "word_ketiv": "נער",
+      "full_ketiv": "לנער",
+      "ketiv_group": [
+        105658,
+        105660
+      ],
+      "word_qere": "נערה",
+      "full_qere": "לנערה",
+      "qere_group": [
+        105658,
+        105660
+      ],
+      "raw_suffix": "",
+      "trailer": "׃ ",
+      "qere": "נַּעֲרָֽה",
+      "qere_trailer": "׃"
+    },
+    {
+      "node": 112265,
+      "section": [
+        "Deuteronomy",
+        33,
+        2
+      ],
+      "categories": [
+        "qere_boundary"
+      ],
+      "language": "hbo",
+      "lexeme": "אש",
+      "word_ketiv": "אש",
+      "full_ketiv": "אשדת",
+      "ketiv_group": [
+        112265,
+        112266
+      ],
+      "word_qere": "אש",
+      "full_qere": "אש",
+      "qere_group": [
+        112265,
+        112265
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": "אֵ֥שׁ",
+      "qere_trailer": " "
+    },
+    {
+      "node": 240076,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "כ",
+      "word_ketiv": "כ",
+      "full_ketiv": "כדנה",
+      "ketiv_group": [
+        240076,
+        240077
+      ],
+      "word_qere": "כ",
+      "full_qere": "כדנה",
+      "qere_group": [
+        240076,
+        240077
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240077,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "דנה",
+      "word_ketiv": "דנה",
+      "full_ketiv": "כדנה",
+      "ketiv_group": [
+        240076,
+        240077
+      ],
+      "word_qere": "דנה",
+      "full_qere": "כדנה",
+      "qere_group": [
+        240076,
+        240077
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240078,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "אמר",
+      "word_ketiv": "תאמרון",
+      "full_ketiv": "תאמרון",
+      "ketiv_group": [
+        240078,
+        240078
+      ],
+      "word_qere": "תאמרון",
+      "full_qere": "תאמרון",
+      "qere_group": [
+        240078,
+        240078
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240079,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "ל",
+      "word_ketiv": "להום",
+      "full_ketiv": "להום",
+      "ketiv_group": [
+        240079,
+        240079
+      ],
+      "word_qere": "להום",
+      "full_qere": "להום",
+      "qere_group": [
+        240079,
+        240079
+      ],
+      "raw_suffix": "ְהֹום",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240080,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "אלה",
+      "word_ketiv": "אלהיא",
+      "full_ketiv": "אלהיא",
+      "ketiv_group": [
+        240080,
+        240080
+      ],
+      "word_qere": "אלהיא",
+      "full_qere": "אלהיא",
+      "qere_group": [
+        240080,
+        240080
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240081,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "די",
+      "word_ketiv": "די",
+      "full_ketiv": "די",
+      "ketiv_group": [
+        240081,
+        240081
+      ],
+      "word_qere": "די",
+      "full_qere": "די",
+      "qere_group": [
+        240081,
+        240081
+      ],
+      "raw_suffix": "",
+      "trailer": "־",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240082,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "שמין",
+      "word_ketiv": "שמיא",
+      "full_ketiv": "שמיא",
+      "ketiv_group": [
+        240082,
+        240082
+      ],
+      "word_qere": "שמיא",
+      "full_qere": "שמיא",
+      "qere_group": [
+        240082,
+        240082
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 240083,
+      "section": [
+        "Jeremiah",
+        10,
+        11
+      ],
+      "categories": [
+        "aramaic"
+      ],
+      "language": "arc",
+      "lexeme": "ו",
+      "word_ketiv": "ו",
+      "full_ketiv": "וארקא",
+      "ketiv_group": [
+        240083,
+        240084
+      ],
+      "word_qere": "ו",
+      "full_qere": "וארקא",
+      "qere_group": [
+        240083,
+        240084
+      ],
+      "raw_suffix": "",
+      "trailer": "",
+      "qere": null,
+      "qere_trailer": null
+    },
+    {
+      "node": 322495,
+      "section": [
+        "Psalms",
+        72,
+        17
+      ],
+      "categories": [
+        "invalid_qere"
+      ],
+      "language": "hbo",
+      "lexeme": "נין",
+      "word_ketiv": "ינין",
+      "full_ketiv": "ינין",
+      "ketiv_group": [
+        322495,
+        322495
+      ],
+      "word_qere": null,
+      "full_qere": null,
+      "qere_group": [
+        322495,
+        322495
+      ],
+      "raw_suffix": "",
+      "trailer": " ",
+      "qere": "יִנֹּ97ון",
+      "qere_trailer": " "
+    }
+  ]
+}
