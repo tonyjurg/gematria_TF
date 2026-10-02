@@ -7,4 +7,6 @@
 @media(min-width:681px) and (max-height:800px){.sidebar{position:static;max-height:none;overflow:visible}}
 .brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.brand b{font-weight:inherit}.brand-logo{display:block;width:72px;height:72px;flex-shrink:0}
 @media(max-width:680px){.brand{flex-direction:row;align-items:center;gap:12px}.brand-logo{width:44px;height:44px}}
-article table:has(a[href*="/gem_"]){table-layout:fixed;min-width:600px}article table:has(a[href*="/gem_"]) th:first-child{width:45%}article table:has(a[href*="/gem_"]) th:nth-child(2){width:40%}article table:has(a[href*="/gem_"]) th:last-child{width:15%}
+article table:has(a[href*="/gem_"]){table-layout:fixed;min-width:600px}article table:has(a[href*="/gem_"]) th:first-child{width:38%}article table:has(a[href*="/gem_"]) th:nth-child(2){width:47%}article table:has(a[href*="/gem_"]) th:last-child{width:15%}
+
+.feature-id{display:block;margin-top:7px;font-size:.85em;font-weight:400}.feature-id code{background:none;padding:0}article table:has(.feature-id) td:first-child{font-weight:400}
