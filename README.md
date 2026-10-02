@@ -12,6 +12,17 @@ Each numerical method × text representation × reading × transformation is a s
 integer `.tf` node feature. The result is a Text-Fabric add-on; it contains no copy of
 BHSA's `otype`, `oslots`, or other core features.
 
+## User documentation
+
+Start with the [documentation overview](docs/index.md), [using the dataset](docs/getting-started.md),
+and [worked examples](docs/examples.md). The site brings the existing feature catalogue,
+representation specification, source audit, and validation results together under
+[Technical reference](docs/technical.md).
+
+A GitHub Pages site with a responsive sidebar is ready to build and publish. See
+[Building and publishing](docs/publishing.md) for local preview and the manual Pages workflow.
+The documentation build checks internal links and leaves the numerical dataset unchanged.
+
 ## Features
 
 See the [generated feature catalogue](docs/features.md) for all 36 files and coverage counts.
