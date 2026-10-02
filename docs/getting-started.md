@@ -67,32 +67,33 @@ addon = Path("tf/2021").resolve()
 
 TF = Fabric(locations=[str(source), str(addon)])
 api = TF.load(
-    "gematria_hechrechi_full_ketiv_identity "
-    "gematria_text_full_ketiv "
-    "gematria_full_start_ketiv"
+    "gem_hechrechi_full_ketiv_ident "
+    "gem_text_full_ketiv "
+    "gem_full_start_ketiv"
 )
 if not api:
     raise RuntimeError("The source or add-on could not be loaded")
 
 F = api.F
-print(F.gematria_text_full_ketiv.v(1))               # בראשית
-print(F.gematria_hechrechi_full_ketiv_identity.v(1)) # 913
+print(F.gem_text_full_ketiv.v(1))               # בראשית
+print(F.gem_hechrechi_full_ketiv_ident.v(1)) # 913
 ```
 
 Each feature is accessed by its name. Use the [feature catalogue](features.md) to choose another method, representation, or reading.
 
 ## Understand a feature name
 
-`gematria_hechrechi_full_ketiv_identity` means:
+`gem_hechrechi_full_ketiv_ident` means:
 
 Part | Meaning
 ---|---
+`gem` | Gematria feature prefix
 `hechrechi` | The standard numerical method
 `full` | The reconstructed full written form
 `ketiv` | The written consonants recorded by BHSA
-`identity` | No letter substitution before calculation
+`ident` | Identity: no letter substitution before calculation
 
-The committed dataset uses `identity`. The local generator also supports Atbash and Albam as optional, separately named transformations.
+The committed feature names use `ident`. The calculation option and provenance metadata retain the full name `identity`. The local generator also supports Atbash and Albam as optional, separately named transformations.
 
 ## Where next?
 

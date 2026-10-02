@@ -6,6 +6,10 @@
   Adapted organization (README, production notebook, tf/version, CITATION.cff),
   node dictionaries, Fabric.save, metadata vocabulary, reload verification and
   Dependabot conventions. Our exporter specifies a separate output directory.
+- Tony Jurg, Create_TF-IDF_features_BHSA_TF, production notebook.
+  https://github.com/tonyjurg/Create_TF-IDF_features_BHSA_TF/blob/main/create_tfidf_features.ipynb
+  Adapted the clickable contents structure: explicit section anchors, linked
+  contents entries, and Back to ToC links. The notebook declares CC BY 4.0.
 - Avrohom Perl, Hebrew, MIT, inspected commit
   55d4d6786b87c40e5f43b7cb060b03bd5126a9b1.
   https://github.com/avi-perl/Hebrew

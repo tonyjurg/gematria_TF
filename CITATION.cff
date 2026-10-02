@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: Jurg
     given-names: Tony
-version: 0.1.0
-date-released: 2026-10-01
+version: 0.2.0
+date-released: 2026-10-02
 url: https://github.com/tonyjurg/gematria_TF
 license: MIT
 references:

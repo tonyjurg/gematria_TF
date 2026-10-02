@@ -28,7 +28,7 @@ python create_gematria_features.py --fetch --limit 100 --readings ketiv qere --o
 python create_gematria_features.py --fetch --readings ketiv qere --transforms identity atbash albam --output output/extended/2021
 ```
 
-This produces **75 numerical features** plus the 11 audit features. Transformation names appear in the feature names, so their values remain distinct from the identity results.
+This produces **75 numerical features** plus the 11 audit features. Transformation names appear in the feature names (`ident` for `identity`; `atbash` and `albam` unchanged), so their values remain distinct from the identity results.
 
 ## Other choices
 

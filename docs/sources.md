@@ -6,7 +6,7 @@ When using gematria_TF in research, identify the numerical method, text represen
 
 **Suggested project citation**
 
-> Jurg, Tony. *gematria_TF: reproducible gematria features for BHSA*. Version 0.1.0. https://github.com/tonyjurg/gematria_TF.
+> Jurg, Tony. *gematria_TF: reproducible gematria features for BHSA*. Version 0.2.0. https://github.com/tonyjurg/gematria_TF.
 
 The repository includes a [CITATION.cff file](../CITATION.cff). Record the BHSA source commit from the [dataset manifest](../tf/2021/manifest.json) with any published results.
 

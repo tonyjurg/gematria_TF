@@ -44,7 +44,7 @@ The current pinned source has a malformed qere at Psalms 72:17 (word 322495):
 `יִנֹּ97ון`, containing ASCII digits. The strict normalizer rejects this value.
 Production uses the explicit `invalid_qere="omit"` policy: withhold that qere
 word's normalized text/numeric values and the full values of every slot in its
-group. `gematria_qere_error` records the source-word error; start/end features
+group. `gem_qere_error` records the source-word error; start/end features
 remain available. The manifest records errors and actual feature node counts.
 Ketiv is not affected. There is no fallback to ketiv for malformed qere: fallback
 is reserved for absent qere entries. Explicit empty qere remains valid, value zero.

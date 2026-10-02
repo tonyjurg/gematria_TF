@@ -1,5 +1,21 @@
 # Validation results
 
+## Version 0.2.0 — 2 October 2026
+
+- 45 tests passed, including the short feature names and distinct transformation outputs.
+- All 36 complete-corpus features were regenerated and reloaded through Text-Fabric.
+  Every data payload is byte-identical to its version 0.1.0 counterpart; node counts
+  and the pinned BHSA source are unchanged. Only names and provenance metadata changed.
+- All file checksums, generator source hashes, and independent BHSA examples passed
+  `scripts/verify_dataset.py`. The renamed TF files total 59,136,362 bytes.
+- All five notebook code cells and all six documentation example blocks executed
+  successfully with the short feature names. The notebook generated and reloaded
+  a 100-word, 36-feature sample; its committed outputs remain cleared.
+- All 12 notebook navigation links resolve to their explicit anchors: six contents
+  entries and six Back to ToC links.
+
+## Original release validation — 1 October 2026
+
 Validated locally on 2026-10-01, Windows, Python 3.13.14, Text-Fabric 13.1.0, Unicode 15.1.0.
 
 - 44 pytest tests passed, including known values, final-letter variants, Unicode,

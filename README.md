@@ -25,17 +25,22 @@ The documentation build checks internal links and leaves the numerical dataset u
 
 ## Features
 
+Since dataset version **0.2.0**, feature identifiers use `gem_` and the
+identity transformation suffix `_ident`. For example,
+`gem_hechrechi_full_ketiv_ident`. The CLI still accepts `--transforms identity`.
+See the [feature-name migration note](docs/features.md#short-feature-names) for existing queries.
+
 See the [generated feature catalogue](docs/features.md) for all 36 files and coverage counts.
 
 Feature pattern | Type | Node | Meaning
 ---|---|---|---
-`gematria_<method>_lexeme_<transform>` | `int` | `word` | Value of the normalized BHSA lexeme
-`gematria_<method>_word_<reading>_<transform>` | `int` | `word` | Value of the actual consonantal BHSA word slot
-`gematria_<method>_full_<reading>_<transform>` | `int` | `word` | Value of the reconstructed orthographic group
-`gematria_text_lexeme`, `gematria_text_word_<reading>`, `gematria_text_full_<reading>` | `str` | `word` | Normalized input before transformation
-`gematria_full_start_<reading>`, `gematria_full_end_<reading>` | `int` | `word` | First/last source word node of the group
-`gematria_has_qere` | `int` | `word` | An explicit qere entry exists, including an empty entry
-`gematria_qere_error` | `str` | `word` | Source qere normalization error; absent on valid entries
+`gem_<method>_lexeme_<transform>` | `int` | `word` | Value of the normalized BHSA lexeme
+`gem_<method>_word_<reading>_<transform>` | `int` | `word` | Value of the actual consonantal BHSA word slot
+`gem_<method>_full_<reading>_<transform>` | `int` | `word` | Value of the reconstructed orthographic group
+`gem_text_lexeme`, `gem_text_word_<reading>`, `gem_text_full_<reading>` | `str` | `word` | Normalized input before transformation
+`gem_full_start_<reading>`, `gem_full_end_<reading>` | `int` | `word` | First/last source word node of the group
+`gem_has_qere` | `int` | `word` | An explicit qere entry exists, including an empty entry
+`gem_qere_error` | `str` | `word` | Source qere normalization error; absent on valid entries
 
 Default: five methods × three representations = **15 numeric features**, plus six
 audit features plus an error feature. Adding qere gives 25 numeric features (lexemes are shared), plus eleven
@@ -85,7 +90,7 @@ each full group using the entire source so the last selected slot is not truncat
 [create_gematria_features.ipynb](create_gematria_features.ipynb) follows the setup →
 inspect → calculate → metadata/export → reload/verify sequence in Tony Jurg's
 [TF-IDF feature project](https://github.com/tonyjurg/Create_TF-IDF_Text-Fabric_features).
-It calls the tested library and produces a small sample in a new directory each run.
+Its clickable contents and Back to ToC links navigate all six sections. It calls the tested library and produces a small sample in a new directory each run.
 Install Jupyter if needed with `python -m pip install jupyterlab`.
 Run the local script directly; there is no package build or installation step.
 
@@ -134,7 +139,7 @@ unit**, not a claim about syntactic or lexical compounds. Maqaf terminates the u
 No suffix is appended from `g_prs_utf8`: doing so would count letters twice.
 
 Full values repeat on all constituent slots. **Do not sum them across word nodes.**
-Use `node == gematria_full_start_<reading>` when counting groups. Start/end values
+Use `node == gem_full_start_<reading>` when counting groups. Start/end values
 can point outside a limited or language-filtered output; they always refer to BHSA.
 
 Ketiv is the default and explicitly named. Qere uses BHSA's recorded corrections,
@@ -144,7 +149,7 @@ Lexemes remain BHSA's lexicon annotations for either reading.
 
 The current upstream source contains one malformed qere: Psalms 72:17, node
 322495, `יִנֹּ97ון`. Its qere word value and affected full-group values are omitted
-and flagged in `gematria_qere_error` and the manifest; ketiv remains available.
+and flagged in `gem_qere_error` and the manifest; ketiv remains available.
 No correction is guessed. An absent numeric value means unavailable, not zero.
 
 `--language all` includes Hebrew (`hbo`) and Aramaic (`arc`) with the same Hebrew-script
@@ -176,8 +181,8 @@ from tf.fabric import Fabric
 source = Path(".cache/bhsa/tf/2021").resolve()
 addon = Path("output/smoke").resolve()  # or tf/2021 for a full run
 TF = Fabric(locations=[str(source), str(addon)])
-api = TF.load("gematria_hechrechi_full_ketiv_identity gematria_full_start_ketiv")
-assert api.F.gematria_hechrechi_full_ketiv_identity.v(1) == 913
+api = TF.load("gem_hechrechi_full_ketiv_ident gem_full_start_ketiv")
+assert api.F.gem_hechrechi_full_ketiv_ident.v(1) == 913
 ```
 
 The generator writes and reloads one feature at a time through Text-Fabric and checks
@@ -218,7 +223,7 @@ workflow. This project adds pytest and CI. See [validation results](docs/validat
 
 Additional implementation references and differences are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 Advanced milui variants, manuscript comparisons, maqaf-chain aggregation, and
-higher-node totals are outside version 0.1.0.
+higher-node totals are outside version 0.2.0.
 
 ## License and citation
 

@@ -40,8 +40,8 @@ def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
                   provenance="gematria-tf CLI; manifest.json contains source/output SHA-256",
                   license="CC BY-NC 4.0", licenseUrl="https://creativecommons.org/licenses/by-nc/4.0/",
                   normalization=POLICY, languagePolicy=language,
-                  invalidQerePolicy="omit affected word/full values; see gematria_qere_error and manifest",
-                  coverage="partial" if limit else "complete-selected-language", nodeType="word")
+                  invalidQerePolicy="omit affected word/full values; see gem_qere_error and manifest",
+                  featureNameVersion="2", coverage="partial" if limit else "complete-selected-language", nodeType="word")
     output.mkdir(parents=True, exist_ok=True)
     writer = Fabric(locations=str(output), silent="deep")
     counts = {}
@@ -74,21 +74,22 @@ def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
                 source_features += " qere_utf8 qere_trailer_utf8"
             extra = dict(representation=rep, reading="lexicon" if rep == "lexeme" else reading,
                          sourceFeatures=source_features, specificationVersion="1")
-            add(f"gematria_text_{suffix}", texts[rep], f"Normalized consonants for {suffix}", "str", **extra)
+            add(f"gem_text_{suffix}", texts[rep], f"Normalized consonants for {suffix}", "str", **extra)
             for transform in transforms:
                 for method in methods:
                     values = {n: calculate(texts[rep][n], method, transform) for n in nodes if texts[rep][n] is not None}
-                    name = f"gematria_{method}_{suffix}_{transform}"
+                    transform_id = "ident" if transform == "identity" else transform
+                    name = f"gem_{method}_{suffix}_{transform_id}"
                     add(name, values, f"Mispar {method}: {suffix}; transform={transform}",
                         method=method, transform=transform, **extra)
-        add(f"gematria_full_start_{reading}", starts, "First BHSA word slot in full form (value is a node id)", reading=reading)
-        add(f"gematria_full_end_{reading}", ends, "Last BHSA word slot in full form (value is a node id)", reading=reading)
+        add(f"gem_full_start_{reading}", starts, "First BHSA word slot in full form (value is a node id)", reading=reading)
+        add(f"gem_full_end_{reading}", ends, "Last BHSA word slot in full form (value is a node id)", reading=reading)
         del texts, starts, ends
         gc.collect()
-    add("gematria_has_qere", {w.node: int(w.qere is not None) for w in selected}, "Explicit BHSA qere entry present (including empty readings)")
+    add("gem_has_qere", {w.node: int(w.qere is not None) for w in selected}, "Explicit BHSA qere entry present (including empty readings)")
     errors = qere_errors(words)
-    add("gematria_qere_error", errors, "Unsupported characters in source qere; affected qere word/full values are absent", "str")
-    manifest = dict(generatorVersion=__version__, python=platform.python_version(),
+    add("gem_qere_error", errors, "Unsupported characters in source qere; affected qere word/full values are absent", "str")
+    manifest = dict(generatorVersion=__version__, featureNameVersion=2, python=platform.python_version(),
                     unicodeVersion=unicodedata.unidata_version, textFabric=version("text-fabric"),
                     source=lock, methods=list(methods), transformations=list(transforms), readings=list(readings),
                     languagePolicy=language, limit=limit, wordCount=len(nodes),

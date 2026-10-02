@@ -35,25 +35,25 @@ def test_export_roundtrip_and_complete_group_at_limit(corpus, tmp_path):
     output = tmp_path / "result"
     manifest = generate(api, source, lock, output, limit=1)
     assert manifest["wordCount"] == 1
-    assert len(list(output.glob("gematria_hechrechi_*.tf"))) == 3
+    assert len(list(output.glob("gem_hechrechi_*.tf"))) == 3
     assert not (output / "otype.tf").exists()
-    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gematria_hechrechi_full_ketiv_identity gematria_full_end_ketiv", silent="deep")
-    assert loaded.F.gematria_hechrechi_full_ketiv_identity.v(1) == 913
-    assert loaded.F.gematria_hechrechi_full_ketiv_identity.v(2) is None
-    assert loaded.F.gematria_full_end_ketiv.v(1) == 2
-    assert "@coverage=partial" in (output / "gematria_hechrechi_full_ketiv_identity.tf").read_text(encoding="utf-8")
+    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gem_hechrechi_full_ketiv_ident gem_full_end_ketiv", silent="deep")
+    assert loaded.F.gem_hechrechi_full_ketiv_ident.v(1) == 913
+    assert loaded.F.gem_hechrechi_full_ketiv_ident.v(2) is None
+    assert loaded.F.gem_full_end_ketiv.v(1) == 2
+    assert "@coverage=partial" in (output / "gem_hechrechi_full_ketiv_ident.tf").read_text(encoding="utf-8")
 
 
 def test_qere_empty_and_language_filter(corpus, tmp_path):
     source, api, lock = corpus
     output = tmp_path / "result"
     generate(api, source, lock, output, readings=("ketiv", "qere"), language="hebrew")
-    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gematria_hechrechi_word_qere_identity gematria_hechrechi_full_qere_identity gematria_has_qere", silent="deep")
-    assert loaded.F.gematria_hechrechi_word_qere_identity.v(3) == 0
-    assert loaded.F.gematria_has_qere.v(3) == 1
-    assert loaded.F.gematria_hechrechi_word_qere_identity.v(4) is None
+    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gem_hechrechi_word_qere_ident gem_hechrechi_full_qere_ident gem_has_qere", silent="deep")
+    assert loaded.F.gem_hechrechi_word_qere_ident.v(3) == 0
+    assert loaded.F.gem_has_qere.v(3) == 1
+    assert loaded.F.gem_hechrechi_word_qere_ident.v(4) is None
     # Group is built before filtering: arc neighbour retained in full text.
-    assert loaded.F.gematria_hechrechi_full_qere_identity.v(3) == 3
+    assert loaded.F.gem_hechrechi_full_qere_ident.v(3) == 3
 
 
 def test_repeat_generation_is_byte_identical(corpus, tmp_path):
@@ -69,10 +69,10 @@ def test_invalid_qere_is_reported_and_omitted(corpus, tmp_path):
     output = tmp_path / "invalid-qere"
     manifest = generate(api, source, lock, output, readings=("ketiv", "qere"))
     assert "3" in manifest["qereErrors"]
-    assert manifest["featureNodeCounts"]["gematria_hechrechi_word_qere_identity"] == 3
-    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gematria_hechrechi_word_qere_identity gematria_qere_error", silent="deep")
-    assert loaded.F.gematria_hechrechi_word_qere_identity.v(3) is None
-    assert "U+0039" in loaded.F.gematria_qere_error.v(3)
+    assert manifest["featureNodeCounts"]["gem_hechrechi_word_qere_ident"] == 3
+    loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gem_hechrechi_word_qere_ident gem_qere_error", silent="deep")
+    assert loaded.F.gem_hechrechi_word_qere_ident.v(3) is None
+    assert "U+0039" in loaded.F.gem_qere_error.v(3)
 
 
 def test_output_safety_and_invalid_options(corpus, tmp_path):
@@ -102,3 +102,21 @@ def test_source_hashes_ignore_only_windows_newlines():
     assert source_digest(b"@node\r\n1\t2\r\n") == source_digest(b"@node\n1\t2\n")
     assert source_digest(b"1\t2\n") != source_digest(b"1\t3\n")
 
+
+def test_short_feature_names_keep_transform_provenance(corpus, tmp_path):
+    source, api, lock = corpus
+    output = tmp_path / "short-names"
+    manifest = generate(api, source, lock, output, methods=("hechrechi",),
+                        transforms=("identity", "atbash", "albam"))
+    assert manifest["featureNameVersion"] == 2
+    assert manifest["transformations"] == ["identity", "atbash", "albam"]
+    assert len(manifest["features"]) == 16
+    assert all(name.startswith("gem_") and "_identity" not in name
+               for name in manifest["features"])
+    loaded = Fabric(locations=str(output), silent="deep").load(
+        "gem_hechrechi_word_ketiv_ident gem_hechrechi_word_ketiv_atbash gem_hechrechi_word_ketiv_albam",
+        silent="deep")
+    assert loaded.F.gem_hechrechi_word_ketiv_ident.v(1) == 2
+    assert loaded.F.gem_hechrechi_word_ketiv_atbash.v(1) == 300
+    assert loaded.F.gem_hechrechi_word_ketiv_albam.v(1) == 40
+    assert "@transform=identity" in (output / "gem_hechrechi_word_ketiv_ident.tf").read_text(encoding="utf-8")

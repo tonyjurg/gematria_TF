@@ -13,15 +13,15 @@ TF = Fabric(locations=[
     str(Path("tf/2021").resolve()),
 ])
 api = TF.load(" ".join([
-    "gematria_text_word_ketiv",
-    "gematria_text_word_qere",
-    "gematria_text_full_ketiv",
-    "gematria_hechrechi_word_ketiv_identity",
-    "gematria_hechrechi_word_qere_identity",
-    "gematria_hechrechi_full_ketiv_identity",
-    "gematria_gadol_full_ketiv_identity",
-    "gematria_full_start_ketiv",
-    "gematria_qere_error",
+    "gem_text_word_ketiv",
+    "gem_text_word_qere",
+    "gem_text_full_ketiv",
+    "gem_hechrechi_word_ketiv_ident",
+    "gem_hechrechi_word_qere_ident",
+    "gem_hechrechi_full_ketiv_ident",
+    "gem_gadol_full_ketiv_ident",
+    "gem_full_start_ketiv",
+    "gem_qere_error",
 ]))
 if not api:
     raise RuntimeError("Could not load the dataset")
@@ -33,20 +33,20 @@ F = api.F
 BHSA’s first two slots divide <span lang="he" dir="rtl">בראשית</span> into <span lang="he" dir="rtl">ב</span> and <span lang="he" dir="rtl">ראשית</span>.
 
 ```python
-assert F.gematria_hechrechi_word_ketiv_identity.v(1) == 2
-assert F.gematria_hechrechi_word_ketiv_identity.v(2) == 911
-assert F.gematria_hechrechi_full_ketiv_identity.v(1) == 913
-assert F.gematria_hechrechi_full_ketiv_identity.v(2) == 913
-assert F.gematria_full_start_ketiv.v(2) == 1
+assert F.gem_hechrechi_word_ketiv_ident.v(1) == 2
+assert F.gem_hechrechi_word_ketiv_ident.v(2) == 911
+assert F.gem_hechrechi_full_ketiv_ident.v(1) == 913
+assert F.gem_hechrechi_full_ketiv_ident.v(2) == 913
+assert F.gem_full_start_ketiv.v(2) == 1
 ```
 
-Both slots carry the full value for convenient querying. To count the written word once, use the slot identified by `gematria_full_start_ketiv`.
+Both slots carry the full value for convenient querying. To count the written word once, use the slot identified by `gem_full_start_ketiv`.
 
 ## Count each full form once
 
 ```python
-full_value = F.gematria_hechrechi_full_ketiv_identity
-full_start = F.gematria_full_start_ketiv
+full_value = F.gem_hechrechi_full_ketiv_ident
+full_start = F.gem_full_start_ketiv
 
 # In this pinned BHSA version, Genesis 1:1 consists of slots 1–11.
 verse_total = sum(
@@ -65,10 +65,10 @@ Genesis 8:17 has a recorded reading difference at BHSA word node 3897.
 
 ```python
 w = 3897
-print(F.gematria_text_word_ketiv.v(w))  # הוצא
-print(F.gematria_text_word_qere.v(w))   # היצא
-assert F.gematria_hechrechi_word_ketiv_identity.v(w) == 102
-assert F.gematria_hechrechi_word_qere_identity.v(w) == 106
+print(F.gem_text_word_ketiv.v(w))  # הוצא
+print(F.gem_text_word_qere.v(w))   # היצא
+assert F.gem_hechrechi_word_ketiv_ident.v(w) == 102
+assert F.gem_hechrechi_word_qere_ident.v(w) == 106
 ```
 
 ## Find full forms with the same value
@@ -81,7 +81,7 @@ for w in F.otype.s("word"):
     if full_value.v(w) == 26:
         matches.append((
             api.T.sectionFromNode(w),
-            F.gematria_text_full_ketiv.v(w),
+            F.gem_text_full_ketiv.v(w),
         ))
 
 for passage, text in matches[:10]:
@@ -96,9 +96,9 @@ The source qere at Psalms 72:17 contains unexpected digits. The dataset preserve
 
 ```python
 w = 322495
-assert F.gematria_hechrechi_word_ketiv_identity.v(w) == 120
-assert F.gematria_hechrechi_word_qere_identity.v(w) is None
-print(F.gematria_qere_error.v(w))
+assert F.gem_hechrechi_word_ketiv_ident.v(w) == 120
+assert F.gem_hechrechi_word_qere_ident.v(w) is None
+print(F.gem_qere_error.v(w))
 ```
 
 Always distinguish `None` from a valid value of `0`. The [source audit](bhsa-audit.md) documents this case and other representation checks.
