@@ -25,11 +25,6 @@ The documentation build checks internal links and leaves the numerical dataset u
 
 ## Features
 
-Since dataset version **0.2.0**, feature identifiers use `gem_` and the
-identity transformation suffix `_ident`. For example,
-`gem_hechrechi_full_ketiv_ident`. The CLI still accepts `--transforms identity`.
-See the [feature-name migration note](docs/features.md#short-feature-names) for existing queries.
-
 See the [generated feature catalogue](docs/features.md) for all 36 files and coverage counts.
 
 Feature pattern | Type | Node | Meaning

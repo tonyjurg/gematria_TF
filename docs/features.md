@@ -113,8 +113,3 @@ One malformed qere at **word node 322495 (Psalm 72:17)** is recorded in `gem_qer
 
 For exact definitions and provenance, see [Methods and conventions](methods.md), [Text representations](representations.md), the [Source audit](bhsa-audit.md), and the [Dataset manifest](../tf/2021/manifest.json).
 
-## Short feature names
-
-Dataset version **0.2.0** shortens every feature prefix from `gematria_` to `gem_`, and the identity suffix from `_identity` to `_ident`. For example, `gematria_hechrechi_full_ketiv_identity` becomes `gem_hechrechi_full_ketiv_ident`, and `gematria_text_full_ketiv` becomes `gem_text_full_ketiv`.
-
-Update feature lists and `F.<feature>` / `Fs("<feature>")` calls in existing scripts. Replace the old add-on directory with the new 36-file set when upgrading; do not overlay the new files on an old installation, which would leave both names present. The dataset contains no duplicate aliases. Node IDs and values are unchanged. Numerical method names, `atbash`, `albam`, and the CLI option `--transforms identity` remain unchanged.
