@@ -1,5 +1,14 @@
 # Validation results
 
+## Genesis 1 example and clean TF layout — 5 October 2026
+
+- 53 tests passed, including provenance placement, complete duplicate verse listings, separation of numerical methods, and the optional different-spellings filter.
+- The new analysis notebook executed all seven code cells in a real Jupyter kernel from a directory without a repository checkout. It downloaded the published TF features and external provenance through Text-Fabric and checked the matching BHSA snapshot.
+- The chapter selection contains 31 verses and 434 full written word occurrences. The default table contains 79 duplicated Hechrechi values and 76 duplicated Gadol values. Repeated spellings are included; 42 rows also involve different spellings.
+- Every ToC and return link resolves. The notebook includes its actual executed table output.
+- Both Python blocks in Getting started ran successfully without a clone: the native TF download route returned בראשית and 913. The dataset checksum and independent passage checks passed with the relocated manifest.
+- `tf/2021` contains only the 36 feature files. The unchanged dataset manifest is now `provenance/2021/manifest.json`; future generator runs also write provenance outside their TF feature directory.
+
 ## Standard Text-Fabric source — 5 October 2026
 
 - 49 tests passed, including native TF downloading, standard directory enforcement, failed downloads, and source checksum validation.

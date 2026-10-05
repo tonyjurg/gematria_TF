@@ -59,3 +59,5 @@ Both Biblical Hebrew and Aramaic are included. The base is **BHSA 2021**, verifi
 - [Technical reference](technical.md): feature catalogue, representation specification, source audit, and validation.
 - [Sources and citation](sources.md): acknowledge BHSA and the scholarly and software references.
 - [Licenses](legal.md): terms for using the data, code, and documentation.
+
+Try the [Genesis 1 duplicate-gematria notebook](../genesis1_duplicate_gematria.ipynb) to find matching word values and the verses containing them, using Hechrechi and Gadol.

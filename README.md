@@ -236,3 +236,15 @@ BHSA, and the precise source commit recorded in your generated manifest.
 
 
 The TF directory contains only feature files. Generation writes its manifest outside that directory: `tf/2021` uses `provenance/2021/manifest.json`; a sample output `output/sample/2021` uses `output/sample/provenance/2021/manifest.json`.
+
+
+## Genesis 1 duplicate-gematria example
+
+[genesis1_duplicate_gematria.ipynb](genesis1_duplicate_gematria.ipynb) is a complete Jupyter example with a clickable contents menu. It downloads the published TF features from this repository through Text-Fabric and selects Genesis 1 with TF's passage APIs. It compares full-form ketiv word values under Hechrechi and Gadol, counts each written form once, and displays the matching words and all their verses in one simple table. Repeated spellings are included; a switch limits matches to different spellings.
+
+```console
+python -m pip install -r requirements-notebooks.txt
+python -m jupyter lab genesis1_duplicate_gematria.ipynb
+```
+
+The notebook runs without project-local imports, keeps credentials outside its cells and outputs, and includes the verified result table. Notebook menu conventions follow the [TF-IDF reference notebook](https://github.com/tonyjurg/Create_TF-IDF_Text-Fabric_features/blob/main/create_tfidf_features.ipynb).

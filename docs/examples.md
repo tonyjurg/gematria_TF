@@ -104,3 +104,15 @@ print(F.gem_qere_error.v(w))
 ```
 
 Always distinguish `None` from a valid value of `0`. The [source audit](bhsa-audit.md) documents this case and other representation checks.
+
+
+## Explore duplicate word values in Genesis 1
+
+Open [the Genesis 1 duplicate-gematria notebook](../genesis1_duplicate_gematria.ipynb) for a complete runnable analysis. It downloads this repository's published TF features through Text-Fabric, compares **Hechrechi** and **Gadol**, and lists the matching full written words and **every verse in Genesis 1** containing each duplicated value. A clickable contents menu and Back to ToC links guide the workflow.
+
+Repeated spellings are included by default. Set `ONLY_DIFFERENT_FORMS = True` in the notebook to show only equal values shared by different spellings. Full-form starts prevent attached-prefix slots from being counted twice. The committed notebook includes its verified table output.
+
+```console
+python -m pip install -r requirements-notebooks.txt
+python -m jupyter lab genesis1_duplicate_gematria.ipynb
+```

@@ -24,7 +24,10 @@ These pages document the exact definitions and evidence behind the dataset. They
 - [BHSA source lock](../gematria_tf/bhsa-lock.json): version and checksums of the input features.
 - [Source code](../gematria_tf): local calculation, representation, and generation logic.
 - [Production notebook](../create_gematria_features.ipynb): the executable walkthrough.
+- [Genesis 1 duplicate-gematria notebook](../genesis1_duplicate_gematria.ipynb): a complete native TF download and two-method analysis with a verse table.
 
 ## Maintaining this documentation
 
 The site is built from Markdown in `/docs`. The builder keeps reference pages within the site and directs links to dataset and code files to GitHub. See [Building and publishing the site](publishing.md) for the local preview and GitHub Pages setup.
+
+- [Genesis 1 duplicate-gematria notebook](../genesis1_duplicate_gematria.ipynb): a complete native TF download and two-method analysis with a verse table.

@@ -69,7 +69,7 @@ if (local_addon / "gem_hechrechi_full_ketiv_ident.tf").is_file() and local_manif
     addon = local_addon
     manifest_file = local_manifest
 else:
-    addon, addon_commit = download_folder("tonyjurg", "gematria_TF", "/tf")
+    addon, addon_commit = download_folder("tonyjurg", "gematria_TF", "/tf", "hot")
     provenance, _ = download_folder("tonyjurg", "gematria_TF", "/provenance", addon_commit)
     manifest_file = provenance / "manifest.json"
 
