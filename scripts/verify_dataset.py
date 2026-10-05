@@ -16,7 +16,7 @@ from tf.fabric import Fabric
 def main():
     output = Path("tf/2021").resolve()
     source = source_directory()
-    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads((Path("provenance/2021/manifest.json")).read_text(encoding="utf-8"))
     # Generator source hashes describe the historical generation, not later loader edits.
     assert manifest["source"] == source_lock() == validate_source(source)
     assert manifest["wordCount"] == 426590

@@ -1,8 +1,12 @@
 # Start using the dataset
 
-The `.tf` files are already generated. You only need to obtain the repository, download the matching BHSA source, and load the features you want.
+The `.tf` files are already generated. You can download them directly with Text-Fabric, download a ZIP, or clone the repository. Load them alongside their matching BHSA source.
 
-## 1. Obtain a local copy
+## 1. Choose how to obtain the features
+
+**Text-Fabric download:** no clone is required. Prepare Python in any working folder, then run the download code in step 3. It obtains this repository’s TF features in Text-Fabric’s standard data tree.
+
+**ZIP or clone:** obtain a complete local repository copy for working with the generator and notebooks.
 
 Obtain the [gematria_TF repository](https://github.com/tonyjurg/gematria_TF) with **Code → Download ZIP** and extract it, or clone it:
 
@@ -15,7 +19,7 @@ The generated dataset is in `tf/2021`.
 
 ## 2. Prepare Python
 
-Use Python **3.11 or newer**. From the repository folder:
+Use Python **3.11 or newer**. From your working folder:
 
 ```console
 python -m venv .venv
@@ -36,35 +40,55 @@ source .venv/bin/activate
 Install the runtime dependencies:
 
 ```console
-python -m pip install -r requirements.txt
+python -m pip install "text-fabric[github]==13.1.0"
 ```
 
 There is no gematria_TF package to install. Its scripts and notebook run locally from the repository.
 
-## 3. Download the matching BHSA source
+## 3. Obtain the gematria features and matching BHSA source
 
-In Python or a notebook opened in the repository folder:
+Run this Python code first. If you are in a repository checkout it uses its local feature files and external manifest. Otherwise it downloads the gematria features and provenance through Text-Fabric. The manifest identifies the matching BHSA snapshot.
 
 ```python
 from pathlib import Path
-from gematria_tf.bhsa import fetch_source, load_source
+import json
+from tf.advanced.repo import checkoutRepo
 
-source = fetch_source()
-_, source_info = load_source(source)
+def download_folder(org, repo, folder, checkout=""):
+    commit, _, _, base, relative = checkoutRepo(
+        "github", org=org, repo=repo, folder=folder, version="2021",
+        checkout=checkout, allowExpress=False, silent="deep",
+    )
+    if not base or not relative:
+        raise RuntimeError(f"Text-Fabric could not download {org}/{repo} {folder}")
+    return (Path(base).expanduser() / relative / "2021").resolve(), commit
+
+local_addon = Path("tf/2021").resolve()
+local_manifest = Path("provenance/2021/manifest.json").resolve()
+if (local_addon / "gem_hechrechi_full_ketiv_ident.tf").is_file() and local_manifest.is_file():
+    addon = local_addon
+    manifest_file = local_manifest
+else:
+    addon, addon_commit = download_folder("tonyjurg", "gematria_TF", "/tf")
+    provenance, _ = download_folder("tonyjurg", "gematria_TF", "/provenance", addon_commit)
+    manifest_file = provenance / "manifest.json"
+
+manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+source_info = manifest["source"]
+source, _ = download_folder("etcbc", "bhsa", "/tf", source_info["commit"])
 print(source_info["version"])  # 2021
 ```
 
-Text-Fabric downloads BHSA into its standard data location, normally `~/text-fabric-data/github/etcbc/bhsa/tf/2021`. Later runs reuse that standard copy. The requested commit and file checksums ensure that the source matches the node numbering used by the generated dataset. There is no project-specific BHSA cache.
+Text-Fabric downloads into its standard data location, normally `~/text-fabric-data/github`. The downloaded feature directories are `tonyjurg/gematria_TF/tf/2021` and `etcbc/bhsa/tf/2021` beneath that root. Provenance is kept separately in `tonyjurg/gematria_TF/provenance/2021`. Later runs reuse the standard copies. There is no project-specific BHSA cache.
 
 ## 4. Load a gematria feature
+
+Continue in the same Python session using `source` and `addon` from step 3:
 
 ```python
 from pathlib import Path
 from tf.fabric import Fabric
-from gematria_tf.bhsa import source_directory
-
-source = source_directory()
-addon = Path("tf/2021").resolve()
+# source and addon were resolved in step 3.
 
 TF = Fabric(locations=[str(source), str(addon)])
 api = TF.load(

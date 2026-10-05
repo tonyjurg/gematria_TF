@@ -190,7 +190,7 @@ The generator writes and reloads one feature at a time through Text-Fabric and c
 success. This limits memory use. `python scripts/verify_dataset.py` additionally
 loads the committed module alongside BHSA and checks independently worked examples. Files carry the source version/commit, source features, method,
 representation, transformation, reading, normalization, coverage, language policy,
-license, and generator version. `manifest.json` records source/output checksums,
+license, and generator version. `provenance/2021/manifest.json` records source/output checksums,
 Python, Unicode, and Text-Fabric versions. Wall-clock TF headers are removed for
 repeatable output; Python/Unicode environment differences remain visible in the manifest.
 
@@ -234,3 +234,5 @@ BHSA-derived outputs and audit excerpts follow the source's
 replace the data terms stated in its README. Cite [this software](CITATION.cff),
 BHSA, and the precise source commit recorded in your generated manifest.
 
+
+The TF directory contains only feature files. Generation writes its manifest outside that directory: `tf/2021` uses `provenance/2021/manifest.json`; a sample output `output/sample/2021` uses `output/sample/provenance/2021/manifest.json`.

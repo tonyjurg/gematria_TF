@@ -35,6 +35,10 @@ def test_export_roundtrip_and_complete_group_at_limit(corpus, tmp_path):
     output = tmp_path / "result"
     manifest = generate(api, source, lock, output, limit=1)
     assert manifest["wordCount"] == 1
+    from gematria_tf.generator import manifest_path
+    assert manifest_path(output).is_file()
+    assert not (output / "manifest.json").exists()
+    assert all(p.suffix == ".tf" or p.name == ".tf" for p in output.iterdir())
     assert len(list(output.glob("gem_hechrechi_*.tf"))) == 3
     assert not (output / "otype.tf").exists()
     loaded = Fabric(locations=[str(source), str(output)], silent="deep").load("gem_hechrechi_full_ketiv_ident gem_full_end_ketiv", silent="deep")
@@ -120,3 +124,9 @@ def test_short_feature_names_keep_transform_provenance(corpus, tmp_path):
     assert loaded.F.gem_hechrechi_word_ketiv_atbash.v(1) == 300
     assert loaded.F.gem_hechrechi_word_ketiv_albam.v(1) == 40
     assert "@transform=identity" in (output / "gem_hechrechi_word_ketiv_ident.tf").read_text(encoding="utf-8")
+
+
+def test_manifest_location_is_outside_tf_directory(tmp_path):
+    from gematria_tf.generator import manifest_path
+    assert manifest_path(tmp_path / "tf" / "2021") == tmp_path / "provenance" / "2021" / "manifest.json"
+    assert manifest_path(tmp_path / "sample" / "2021") == tmp_path / "sample" / "provenance" / "2021" / "manifest.json"

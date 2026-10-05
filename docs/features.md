@@ -111,5 +111,5 @@ Feature | What this means | Entries
 
 One malformed qere at **word node 322495 (Psalm 72:17)** is recorded in `gem_qere_error`. Its qere text and numerical values are unavailable; its written-text and dictionary-form values remain present. This explains the coverage of 426,589 for affected features. Start/end identifiers remain available.
 
-For exact definitions and provenance, see [Methods and conventions](methods.md), [Text representations](representations.md), the [Source audit](bhsa-audit.md), and the [Dataset manifest](../tf/2021/manifest.json).
+For exact definitions and provenance, see [Methods and conventions](methods.md), [Text representations](representations.md), the [Source audit](bhsa-audit.md), and the [Dataset manifest](../provenance/2021/manifest.json).
 

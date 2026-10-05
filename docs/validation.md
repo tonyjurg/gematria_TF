@@ -53,6 +53,6 @@ Validated locally on 2026-10-01, Windows, Python 3.13.14, Text-Fabric 13.1.0, Un
   with Python 3.11 and 3.13; fresh-download BHSA smoke is available by manual dispatch.
 
 Generated TF files total 59,135,750 bytes.
-The [manifest](../tf/2021/manifest.json) records per-feature coverage and hashes.
+The [manifest](../provenance/2021/manifest.json) records per-feature coverage and hashes.
 The single source anomaly and the limits of the orthographic full-form convention
 are documented in [the source audit](bhsa-audit.md) and [representation policy](representations.md).

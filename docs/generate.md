@@ -44,7 +44,7 @@ Groups are reconstructed before language filtering. Start/end features refer to 
 
 ## Check the result
 
-The generator reloads each `.tf` file through Text-Fabric and compares every emitted node/value pair to the calculated values. `manifest.json` records the exact source and feature checksums, settings, software versions, and unavailable readings.
+The generator reloads each `.tf` file through Text-Fabric and compares every emitted node/value pair to the calculated values. The external provenance manifest records the exact source and feature checksums, settings, software versions, and unavailable readings.
 
 To verify the **committed** dataset and its worked examples:
 
@@ -60,3 +60,7 @@ python -m pytest -q
 ```
 
 See [validation results](validation.md) and the [production notebook](../create_gematria_features.ipynb) for more detail.
+
+## Keep TF feature directories clean
+
+Only `.tf` feature files are written to the selected output directory. The committed manifest is [provenance/2021/manifest.json](../provenance/2021/manifest.json). A generation to `output/sample/2021` writes its manifest to `output/sample/provenance/2021/manifest.json`. Both the output directory and its corresponding manifest must be unused for a fresh generation.

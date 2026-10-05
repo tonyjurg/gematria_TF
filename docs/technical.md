@@ -20,7 +20,7 @@ These pages document the exact definitions and evidence behind the dataset. They
 
 ## Provenance files
 
-- [Dataset manifest](../tf/2021/manifest.json): source snapshot, selected combinations, coverage, errors, and checksums.
+- [Dataset manifest](../provenance/2021/manifest.json): source snapshot, selected combinations, coverage, errors, and checksums.
 - [BHSA source lock](../gematria_tf/bhsa-lock.json): version and checksums of the input features.
 - [Source code](../gematria_tf): local calculation, representation, and generation logic.
 - [Production notebook](../create_gematria_features.ipynb): the executable walkthrough.

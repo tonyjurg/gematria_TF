@@ -13,6 +13,13 @@ from .normalization import POLICY
 from .representations import READINGS, REPRESENTATIONS, qere_errors, read_words, represent
 
 
+def manifest_path(output: Path) -> Path:
+    """Keep provenance outside TF feature directories, including sample runs."""
+    output = Path(output).resolve()
+    base = output.parent.parent if output.parent.name == "tf" else output.parent
+    return base / "provenance" / output.name / "manifest.json"
+
+
 def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
              transforms=("identity",), readings=("ketiv",), language="all", limit=None):
     from tf.fabric import Fabric
@@ -20,6 +27,9 @@ def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
     output, source = Path(output).resolve(), Path(source).resolve()
     if output == source or source in output.parents:
         raise ValueError("Output must be separate from the BHSA source directory")
+    provenance_path = manifest_path(output)
+    if provenance_path.exists():
+        raise ValueError("Provenance manifest already exists; choose a fresh output destination")
     if output.exists() and any(output.iterdir()):
         raise ValueError("Output directory must be empty (prevents stale mixed-policy features)")
     for choices, allowed in ((methods, METHODS), (transforms, TRANSFORMS), (readings, READINGS)):
@@ -37,7 +47,7 @@ def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
     common = dict(author="Tony Jurg", convertedBy="gematria-tf", website="https://github.com/tonyjurg/gematria_TF",
                   coreData="BHSA", coreDataUrl="https://github.com/ETCBC/bhsa", version=lock["version"],
                   sourceCommit=lock["commit"], generatorVersion=__version__,
-                  provenance="gematria-tf CLI; manifest.json contains source/output SHA-256",
+                  provenance="gematria-tf CLI; external provenance manifest contains source/output SHA-256",
                   license="CC BY-NC 4.0", licenseUrl="https://creativecommons.org/licenses/by-nc/4.0/",
                   normalization=POLICY, languagePolicy=language,
                   invalidQerePolicy="omit affected word/full values; see gem_qere_error and manifest",
@@ -98,6 +108,7 @@ def generate(api, source: Path, lock: dict, output: Path, *, methods=METHODS,
                     featureNodeCounts=counts,
                     generatorSourceSha256={p.name: sha256(p) for p in sorted(Path(__file__).parent.glob("*.py"))},
                     roundTripVerified=True, features={p.name: sha256(p) for p in sorted(output.glob("*.tf")) if p.is_file()})
-    (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    provenance_path.parent.mkdir(parents=True, exist_ok=True)
+    provenance_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest
 
