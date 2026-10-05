@@ -177,9 +177,11 @@ from tf.fabric import Fabric
 from gematria_tf.bhsa import source_directory
 
 source = source_directory()
-addon = Path("output/smoke").resolve()  # or tf/2021 for a full run
+addon = Path("tf/2021").resolve()  # committed full dataset
 TF = Fabric(locations=[str(source), str(addon)])
 api = TF.load("gem_hechrechi_full_ketiv_ident gem_full_start_ketiv")
+if not api:
+    raise RuntimeError("The source or add-on could not be loaded")
 assert api.F.gem_hechrechi_full_ketiv_ident.v(1) == 913
 ```
 

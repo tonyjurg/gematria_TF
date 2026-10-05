@@ -7,6 +7,7 @@
 - All 36 committed dataset checksums and independent BHSA examples passed against that standard copy. Existing dataset payloads remain unchanged.
 - A 100-word smoke run generated and reloaded 36 features successfully.
 - All five notebook code cells and all six documentation example blocks executed successfully against the standard copy.
+- A separate rerun of all ten published Python blocks (two Getting started, six Worked examples, two README) passed as written. The README loading example uses the included `tf/2021` dataset and checks for load failure.
 - The documentation build checks all local links. Every page includes the subtle TJ Engineering footer credit and original brand mark.
 - Historical generator source hashes in the dataset manifest describe the code used for generation; later loader changes do not alter that provenance record.
 
