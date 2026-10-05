@@ -26,14 +26,14 @@ The generated files use relative links, so the same output works under the proje
 
 Publishing is manual. Ordinary pushes and pull requests build and check the site without publishing it. For later updates, repeat the workflow with publishing selected.
 
-GitHub Pages availability for private repositories depends on the account’s plan. **A Pages site can be publicly accessible even when its source repository is private.** Enable publishing only when you intend the documentation and included audit excerpts to be accessible to that audience. The workflow never changes repository visibility. See [GitHub’s Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+See [GitHub’s Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
 ## Edit the documentation
 
 - Edit the Markdown pages in `/docs`.
 - Adjust the shared layout in `docs/_site/template.html` and styling in `docs/assets/style.css`.
 - Page titles and sidebar organization are defined in `scripts/build_docs.py`.
-- Existing `.md` links are rewritten to `.html` in the site. Links outside `/docs` point to the private GitHub repository.
+- Existing `.md` links are rewritten to `.html` in the site. Links outside `/docs` point to the GitHub repository.
 - Run the build after editing. It fails on unresolved local paths or section anchors.
 
 The numerical generator and committed TF files are independent of this documentation build.

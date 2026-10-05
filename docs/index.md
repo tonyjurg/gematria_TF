@@ -58,4 +58,4 @@ Both Biblical Hebrew and Aramaic are included. The base is **BHSA 2021**, verifi
 - [Methods and conventions](methods.md): understand what each number means.
 - [Technical reference](technical.md): feature catalogue, representation specification, source audit, and validation.
 - [Sources and citation](sources.md): acknowledge BHSA and the scholarly and software references.
-- [License and access](legal.md): using the data and accessing the private repository.
+- [Licenses](legal.md): terms for using the data, code, and documentation.

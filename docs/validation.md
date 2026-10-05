@@ -1,5 +1,15 @@
 # Validation results
 
+## Standard Text-Fabric source — 5 October 2026
+
+- 49 tests passed, including native TF downloading, standard directory enforcement, failed downloads, and source checksum validation.
+- BHSA was downloaded through Text-Fabric into its standard data directory; all 23 required source/dependency files matched the pinned snapshot.
+- All 36 committed dataset checksums and independent BHSA examples passed against that standard copy. Existing dataset payloads remain unchanged.
+- A 100-word smoke run generated and reloaded 36 features successfully.
+- All five notebook code cells and all six documentation example blocks executed successfully against the standard copy.
+- The documentation build checks all local links. Every page includes the subtle TJ Engineering footer credit and original brand mark.
+- Historical generator source hashes in the dataset manifest describe the code used for generation; later loader changes do not alter that provenance record.
+
 ## Version 0.2.0 — 2 October 2026
 
 - 45 tests passed, including the short feature names and distinct transformation outputs.

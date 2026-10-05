@@ -23,7 +23,7 @@ PAGES = [
     ("technical", "Technical reference", "Reference"),
     ("generate", "Regenerate or extend", "Reference"),
     ("sources", "Sources & citation", "Reference"),
-    ("legal", "License & access", "Reference"),
+    ("legal", "Licenses", "Reference"),
     ("representations", "Representation specification", None),
     ("bhsa-audit", "Source audit", None),
     ("validation", "Validation results", None),

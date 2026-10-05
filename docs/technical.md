@@ -4,7 +4,7 @@ These pages document the exact definitions and evidence behind the dataset. They
 
 ## Feature catalogue
 
-[Browse all 36 generated features](features.md), their data types, and the number of word nodes with available values. Each file link opens its location in the private GitHub repository, where repository access is required.
+[Browse all 36 generated features](features.md), their data types, and the number of word nodes with available values. Each file link opens the corresponding file in the GitHub repository.
 
 ## Representation specification
 

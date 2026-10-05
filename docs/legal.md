@@ -1,4 +1,4 @@
-# License and access
+# Licenses
 
 ## Dataset
 
@@ -13,12 +13,6 @@ The newly written Python code is available under the **MIT License**. See [LICEN
 ## Documentation and notebook
 
 Project documentation and the production notebook are **CC BY 4.0**, except source-derived excerpts and third-party material, which retain their stated terms. See [LICENSE-DOCS.md](../LICENSE-DOCS.md) and [third-party notices](../THIRD_PARTY_NOTICES.md).
-
-## Repository access
-
-The [GitHub repository](https://github.com/tonyjurg/gematria_TF) is private. Links to dataset files, source code, and workflow results require an authorized GitHub account. Publishing this documentation does not change the repository’s visibility or grant file access.
-
-If a repository link displays “not found,” check that you are signed in with an account that has access.
 
 ## Scope and limitations
 

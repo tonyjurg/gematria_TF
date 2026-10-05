@@ -10,3 +10,5 @@
 article table:has(a[href*="/gem_"]){table-layout:fixed;min-width:600px}article table:has(a[href*="/gem_"]) th:first-child{width:38%}article table:has(a[href*="/gem_"]) th:nth-child(2){width:47%}article table:has(a[href*="/gem_"]) th:last-child{width:15%}
 
 .feature-id{display:block;margin-top:7px;font-size:.85em;font-weight:400}.feature-id code{background:none;padding:0}article table:has(.feature-id) td:first-child{font-weight:400}
+.project-credit a{color:var(--muted);text-decoration:none}.project-credit a:hover{text-decoration:underline;color:var(--accent)}
+.project-credit a{display:inline-flex;align-items:center;gap:6px}.project-credit img{width:32px;height:32px;object-fit:contain;opacity:.6;mix-blend-mode:multiply}.project-credit a:hover img{opacity:.85}

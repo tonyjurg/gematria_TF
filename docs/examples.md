@@ -7,9 +7,11 @@ These examples use the committed dataset with its matching BHSA source. Run them
 ```python
 from pathlib import Path
 from tf.fabric import Fabric
+from gematria_tf.bhsa import fetch_source
 
+source = fetch_source()
 TF = Fabric(locations=[
-    str(Path(".cache/bhsa/tf/2021").resolve()),
+    str(source),
     str(Path("tf/2021").resolve()),
 ])
 api = TF.load(" ".join([

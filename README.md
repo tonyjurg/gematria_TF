@@ -74,8 +74,10 @@ Or select the extended matrix:
 python create_gematria_features.py --fetch --readings ketiv qere --transforms identity atbash albam --output output/extended/2021
 ```
 
-The pinned download includes the source features needed for computation and the extra features referenced by BHSA's text-display configuration. The source download is cached under `.cache/bhsa/tf/2021`. Use `--source PATH` to
-load an existing copy: all required files must match the local SHA-256 lock after CRLF-to-LF normalization.
+BHSA is downloaded by Text-Fabric into its standard data tree, normally
+`~/text-fabric-data/github/etcbc/bhsa/tf/2021`. The downloader requests the
+recorded BHSA commit; checksums validate all required source files before
+calculation. The project uses the same standard copy as other TF tools.
 An output directory must be empty; choose another output path for another policy.
 `--limit` counts selected word slots, labels coverage **partial**, and still resolves
 each full group using the entire source so the last selected slot is not truncated.
@@ -166,14 +168,15 @@ contributing zero. There is no Hebrew numeral parser or geresh ×1000 rule.
 
 ## Loading generated features
 
-Use the same pinned BHSA version and node numbering. A local example avoids any
-assumption that a private repository can be downloaded anonymously:
+Download BHSA once with `fetch_source()` (or the CLI’s `--fetch` option).
+Then load the add-on alongside Text-Fabric’s standard BHSA copy:
 
 ```python
 from pathlib import Path
 from tf.fabric import Fabric
+from gematria_tf.bhsa import source_directory
 
-source = Path(".cache/bhsa/tf/2021").resolve()
+source = source_directory()
 addon = Path("output/smoke").resolve()  # or tf/2021 for a full run
 TF = Fabric(locations=[str(source), str(addon)])
 api = TF.load("gem_hechrechi_full_ketiv_ident gem_full_start_ketiv")

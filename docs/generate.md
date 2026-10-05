@@ -37,7 +37,7 @@ Option | Effect
 `--methods hechrechi gadol` | Generate only the named numerical methods
 `--readings ketiv` | Use the written text; lexeme features remain included
 `--language hebrew` | Omit Aramaic slots from output
-`--source PATH` | Use an existing source directory matching the pinned checksums
+`--fetch` | Obtain BHSA through Text-Fabric in its standard data directory
 `--help` | Show all options
 
 Groups are reconstructed before language filtering. Start/end features refer to the original BHSA node IDs, including neighbours outside a filtered or limited output.

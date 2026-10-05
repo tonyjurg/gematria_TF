@@ -1,8 +1,7 @@
-"""Download and load only the pinned BHSA features required by this project."""
+"""Obtain BHSA through Text-Fabric and validate its source snapshot."""
 import hashlib
 import json
 from pathlib import Path
-from urllib.request import urlopen
 
 FEATURES = "lex_utf8 g_cons_utf8 g_word_utf8 trailer_utf8 qere_utf8 qere_trailer_utf8 languageISO g_prs_utf8 book chapter verse".split()
 
@@ -20,36 +19,47 @@ def source_digest(data: bytes) -> str:
     return hashlib.sha256(data.replace(b"\r\n", b"\n")).hexdigest()
 
 
-def fetch_source(directory: Path) -> Path:
+def source_directory() -> Path:
+    """Use the standard download root designated by Text-Fabric."""
+    from tf.core.files import backendRep
+
+    return (Path(backendRep("github", "cache")).expanduser()
+            / "etcbc" / "bhsa" / "tf" / source_lock()["version"]).resolve()
+
+
+def validate_source(directory: Path) -> dict:
     lock = source_lock()
-    directory = Path(directory)
-    directory.mkdir(parents=True, exist_ok=True)
     for name, expected in lock["sha256"].items():
-        path = directory / name
-        if path.exists():
-            if source_digest(path.read_bytes()) != expected:
-                raise ValueError(f"Existing source differs from pin: {path}")
-            continue
-        url = f"https://raw.githubusercontent.com/ETCBC/bhsa/{lock['commit']}/tf/{lock['version']}/{name}"
-        with urlopen(url, timeout=120) as response:
-            data = response.read()
-        if source_digest(data) != expected:
-            raise ValueError(f"Checksum mismatch downloading {name}")
-        temporary = path.with_suffix(".download")
-        temporary.write_bytes(data)
-        temporary.replace(path)
+        path = Path(directory) / name
+        if not path.is_file() or source_digest(path.read_bytes()) != expected:
+            raise ValueError(f"Missing or changed pinned BHSA source: {path}")
+    return lock
+
+
+def fetch_source() -> Path:
+    """Let TF download the pinned BHSA snapshot into its standard data tree."""
+    from tf.advanced.repo import checkoutRepo
+
+    lock = source_lock()
+    _, _, _, base, relative = checkoutRepo(
+        "github", org="etcbc", repo="bhsa", folder="/tf",
+        version=lock["version"], checkout=lock["commit"],
+        allowExpress=False, silent="auto",
+    )
+    if not base or not relative:
+        raise RuntimeError("Text-Fabric could not obtain the required BHSA snapshot")
+    directory = (Path(base).expanduser() / relative / lock["version"]).resolve()
+    if directory != source_directory():
+        raise RuntimeError(f"Unexpected Text-Fabric source directory: {directory}")
+    validate_source(directory)
     return directory
 
 
-def load_source(directory: Path):
+def load_source(directory: Path | None = None):
     from tf.fabric import Fabric
 
-    directory = Path(directory).resolve()
-    lock = source_lock()
-    for name, expected in lock["sha256"].items():
-        path = directory / name
-        if not path.is_file() or source_digest(path.read_bytes()) != expected:
-            raise ValueError(f"Missing or changed pinned BHSA source: {path}")
+    directory = source_directory() if directory is None else Path(directory).resolve()
+    lock = validate_source(directory)
     fabric = Fabric(locations=str(directory), silent="deep")
     api = fabric.load(FEATURES, silent="deep")
     if not api:

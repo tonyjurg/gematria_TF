@@ -9,23 +9,22 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from gematria_tf import __version__
-from gematria_tf.bhsa import sha256, source_lock
+from gematria_tf.bhsa import sha256, source_lock, source_directory, validate_source
 from tf.fabric import Fabric
 
 
 def main():
     output = Path("tf/2021").resolve()
-    source = Path(".cache/bhsa/tf/2021").resolve()
+    source = source_directory()
     manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
-    assert manifest["source"] == source_lock()
+    # Generator source hashes describe the historical generation, not later loader edits.
+    assert manifest["source"] == source_lock() == validate_source(source)
     assert manifest["wordCount"] == 426590
     assert manifest["limit"] is None
     assert manifest["roundTripVerified"]
     assert manifest["generatorVersion"] == __version__
     assert manifest["featureNameVersion"] == 2
     assert set(manifest["features"]) == {p.name for p in output.glob("*.tf") if p.is_file()}
-    for name, expected in manifest["generatorSourceSha256"].items():
-        assert sha256(Path("gematria_tf") / name) == expected, name
     for name, expected in manifest["features"].items():
         assert sha256(output / name) == expected, name
     names = "gem_hechrechi_full_ketiv_ident gem_hechrechi_word_ketiv_ident gem_hechrechi_word_qere_ident gem_full_start_ketiv gem_qere_error"

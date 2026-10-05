@@ -15,7 +15,7 @@ from gematria_tf.representations import qere_errors, read_words, represent
 
 
 def main():
-    api, lock = load_source(Path(".cache/bhsa/tf/2021"))
+    api, lock = load_source()
     words = read_words(api)
     ketiv, kstart, kend = represent(words, "ketiv")
     qere, qstart, qend = represent(words, "qere", invalid_qere="omit")
