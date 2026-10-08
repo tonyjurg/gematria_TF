@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Gematria dataset</title>
+  <desc id="desc">A navy database cylinder containing a teal network around a white aleph on a navy disc, with one gold node. Based on the connected-text logo from Tony Jurg’s gematria_TF project.</desc>
+  <g fill="white" stroke="#183747" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 46V210C32 242 224 242 224 210V46Z" />
+    <ellipse cx="128" cy="46" rx="96" ry="25" />
+    <path d="M32 190C32 222 224 222 224 190" fill="none" />
+  </g>
+  <g transform="translate(64 74)" aria-label="Shared connected-text emblem">
+    <path d="M27 27L101 27 110 93 64 114 18 91Z M27 27L64 64 101 27 M18 91L64 64 110 93 M64 64V114" fill="none" stroke="#087989" stroke-width="4" stroke-linejoin="round" />
+    <circle cx="64" cy="64" r="29" fill="#183747" />
+    <text x="64" y="80" text-anchor="middle" font-family="Times New Roman,serif" font-size="49" fill="white">א</text>
+    <g fill="#087989">
+      <circle cx="27" cy="27" r="8" />
+      <circle cx="101" cy="27" r="8" />
+      <circle cx="110" cy="93" r="8" />
+      <circle cx="18" cy="91" r="8" />
+    </g>
+    <circle cx="64" cy="114" r="8" fill="#b9822d" />
+  </g>
+</svg>
