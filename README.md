@@ -1,7 +1,7 @@
-[![Tests](https://github.com/tonyjurg/gematria_TF/actions/workflows/tests.yml/badge.svg)](https://github.com/tonyjurg/gematria_TF/actions/workflows/tests.yml)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Tests](https://github.com/tonyjurg/gematria_TF/actions/workflows/tests.yml/badge.svg)](https://github.com/tonyjurg/gematria_TF/actions/workflows/tests.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-blue)](LICENSE)
-[![Data: CC BY-NC 4.0](https://img.shields.io/badge/Data-CC_BY--NC_4.0-lightgrey)](LICENSE-DATA.md)
+[![Data: CC BY-NC 4.0](https://img.shields.io/badge/Data-CC_BY--NC_4.0-lightgrey)](LICENSE-DATA.md) [![Ask DeepWiki](https://img.shields.io/badge/Ask-DeepWiki-blue)](https://deepwiki.com/tonyjurg/gematria_TF)
 
 # gematria_TF
 
