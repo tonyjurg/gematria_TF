@@ -5,23 +5,13 @@
 
 # gematria_TF
 
-The complete dataset is in [`tf/2021`](tf/2021): **25 numerical features plus 11 audit features**, covering all 426,590 BHSA word slots with identity transformation and separate ketiv/qere readings. One malformed source qere is explicitly flagged; its affected values are unavailable.
+The complete dataset is in [`tf/2021`](tf/2021): **25 numerical features plus 11 audit features**, covering all 426,590 BHSA word slots with identity transformation and separate ketiv/qere readings.
 
-Generate reproducible gematria features for the Hebrew Bible in **BHSA 2021**, still the latest upstream data version (verified 2026-10-01).
-Each numerical method × text representation × reading × transformation is a separate
-integer `.tf` node feature. The result is a Text-Fabric add-on; it contains no copy of
-BHSA's `otype`, `oslots`, or other core features.
+The gematria TF features are created for the Hebrew Bible dataset [BHSA (2021)](https://etcbc.github.io/bhsa/). Each numerical method × text representation × reading × transformation is a separate `.tf` node feature with integer datatype. The result is a Text-Fabric add-on; it contains no copy of BHSA's `otype`, `oslots`, or other core features.
 
 ## User documentation
 
-Start with the [documentation overview](docs/index.md), [using the dataset](docs/getting-started.md),
-and [worked examples](docs/examples.md). The site brings the existing feature catalogue,
-representation specification, source audit, and validation results together under
-[Technical reference](docs/technical.md).
-
-A GitHub Pages site with a responsive sidebar is ready to build and publish. See
-[Building and publishing](docs/publishing.md) for local preview and the manual Pages workflow.
-The documentation build checks internal links and leaves the numerical dataset unchanged.
+Start with the [documentation overview](docs/index.md), [using the dataset](docs/getting-started.md), and [worked examples](docs/examples.md). The site brings the existing feature catalogue, representation specification, source audit, and validation results together under [Technical reference](docs/technical.md).
 
 ## Features
 
@@ -45,7 +35,7 @@ romanizations such as Hekhreḥi, Hechrachi and Siduri refer to the same named f
 
 ## Setup and production
 
-Python 3.11 or newer. From the repository root:
+If you want to recreate this add-on dataset yourself, you can do the folloing. You need Python 3.11 or newer. From the repository root:
 
 ```powershell
 python -m venv .venv
@@ -91,7 +81,7 @@ Its clickable contents and Back to ToC links navigate all six sections. It calls
 Install Jupyter if needed with `python -m pip install jupyterlab`.
 Run the local script directly; there is no package build or installation step.
 
-## Methods
+## Methods for Gematria
 
 Method | Definition | Final letters | `שלום`
 ---|---|---|---:
@@ -130,14 +120,10 @@ Representation | Exact source and rule
 `word_qere` | Normalized `qere_utf8` when explicitly present, otherwise `g_cons_utf8`
 `full_qere` | Same grouping rule using `qere_trailer_utf8` when present, otherwise `trailer_utf8`
 
-BHSA's first two word nodes are `ב` and `ראשית`: their separate word values are 2
-and 911; both receive full-form value 913. “Full” is an operational **orthographic
-unit**, not a claim about syntactic or lexical compounds. Maqaf terminates the unit.
-No suffix is appended from `g_prs_utf8`: doing so would count letters twice.
+BHSA's first two word nodes are `ב` and `ראשית`: their separate word values are 2 and 911; both receive full-form value 913. “Full” is an operational **orthographic unit**, not a claim about syntactic or lexical compounds. Maqaf terminates the unit. No suffix is appended from `g_prs_utf8`: doing so would count letters twice.
 
-Full values repeat on all constituent slots. **Do not sum them across word nodes.**
-Use `node == gem_full_start_<reading>` when counting groups. Start/end values
-can point outside a limited or language-filtered output; they always refer to BHSA.
+Full values repeat on all constituent slots. **Do not sum them across word nodes!**
+Use `node == gem_full_start_<reading>` when counting groups. Start/end values can point outside a limited or language-filtered output; they always refer to BHSA.
 
 Ketiv is the default and explicitly named. Qere uses BHSA's recorded corrections,
 including explicit empty strings and changed boundaries. It does not reconstruct
@@ -185,13 +171,10 @@ if not api:
 assert api.F.gem_hechrechi_full_ketiv_ident.v(1) == 913
 ```
 
-The generator writes and reloads one feature at a time through Text-Fabric and checks
-**every node/value pair** against the calculation dictionary before recording
-success. This limits memory use. `python scripts/verify_dataset.py` additionally
-loads the committed module alongside BHSA and checks independently worked examples. Files carry the source version/commit, source features, method,
-representation, transformation, reading, normalization, coverage, language policy,
-license, and generator version. `provenance/2021/manifest.json` records source/output checksums,
-Python, Unicode, and Text-Fabric versions. Wall-clock TF headers are removed for
+The generator writes and reloads one feature at a time through Text-Fabric and checks **every node/value pair** against the calculation dictionary before recording success. This limits memory use. `python scripts/verify_dataset.py` additionally loads the committed module alongside BHSA and checks independently worked examples.
+Files carry the source version/commit, source features, method, representation, transformation, reading, normalization, coverage, language policy,
+license, and generator version.
+`provenance/2021/manifest.json` records source/output checksums, Python, Unicode, and Text-Fabric versions. Wall-clock TF headers are removed for
 repeatable output; Python/Unicode environment differences remain visible in the manifest.
 
 ## Repository layout and validation
@@ -247,4 +230,4 @@ python -m pip install -r requirements-notebooks.txt
 python -m jupyter lab genesis1_duplicate_gematria.ipynb
 ```
 
-The notebook runs without project-local imports, keeps credentials outside its cells and outputs, and includes the verified result table. Notebook menu conventions follow the [TF-IDF reference notebook](https://github.com/tonyjurg/Create_TF-IDF_Text-Fabric_features/blob/main/create_tfidf_features.ipynb).
+The notebook runs without project-local imports, keeps credentials outside its cells and outputs, and includes the verified result table.
